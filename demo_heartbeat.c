@@ -1,6 +1,10 @@
+#include "demo_heartbeat.h"
 #include "FreeRTOS.h"
 #include "task.h"
-#include "tcp_heartbeat_demo.h"
+#include "FreeRTOS_Sockets.h"
+#include "FreeRTOS_IP.h"
+#include "app_config.h"
+
 
 void vStartHeartbeatDemo( void )
 {
