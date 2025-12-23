@@ -215,6 +215,22 @@ void vApplicationIPNetworkEventHook( eIPCallbackEvent_t eNetworkEvent )
 }
 /*-----------------------------------------------------------*/
 
+#if ( ipconfigUSE_LLMNR != 0 ) || ( ipconfigUSE_NBNS != 0 )
+
+BaseType_t xApplicationDNSQueryHook_Multi(
+    struct xNetworkEndPoint * pxEndPoint,
+    const char * pcName
+)
+{
+    /* This demo does not respond to DNS / LLMNR / NBNS name queries */
+    ( void ) pxEndPoint;
+    ( void ) pcName;
+
+    return pdFAIL;
+}
+
+#endif
+
 static UBaseType_t uxRand( void )
 {
     ulNextRand = ( 0x015a4e35UL * ulNextRand ) + 1UL;
