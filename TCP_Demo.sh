@@ -1,22 +1,21 @@
 #!/bin/bash
 #
-# Run FreeRTOS TCP Echo demo on QEMU (MPS2)
-# Build already done
+# Run FreeRTOS TCP Demo on QEMU (MPS2)
+# QEMU hosts the TCP application (Echo / Heartbeat)
+# Linux provides TAP networking only
 #
 # Usage:
-#   sudo ./run_tcp_echo_qemu.sh
+#   sudo ./TCP_Demo.sh
 
 set -e
 
 ### CONFIG ###
 TAP_IF=tap0
 HOST_IP=10.0.0.1/24
-ECHO_PORT_LETTERS=7
-ECHO_PORT=5001 #ECHO_PORT_HEARTBEAT
 ELF=./build/freertos_tcp_mps2_demo.axf
 ################
 
-echo "=== FreeRTOS TCP Echo QEMU Runner ==="
+echo "=== FreeRTOS TCP Demo (QEMU + TAP) ==="
 
 ### Detect firewall ###
 FIREWALL=""
@@ -30,10 +29,6 @@ fi
 cleanup() {
     echo
     echo "Cleaning up..."
-
-    if [[ -n "$NC_PID" ]]; then
-        kill $NC_PID 2>/dev/null || true
-    fi
 
     ip link set $TAP_IF down 2>/dev/null || true
 
@@ -70,16 +65,13 @@ ip link set $TAP_IF up
 
 echo "TAP interface $TAP_IF up with IP $HOST_IP"
 
-### 3. Start netcat echo server ###
-echo "[3/4] Starting netcat echo server on port $ECHO_PORT"
-#nc -l -p $ECHO_PORT_LETTERS &
-#nc -l -p $ECHO_PORT &
-NC_PID=$!
+### 3. Network ready ###
+echo "[3/4] Linux ready (QEMU hosts TCP server)"
 
 sleep 1
 
 ### 4. Run QEMU ###
-echo "[4/4] Launching QEMU"
+echo "[4/4] Launching QEMU (FreeRTOS TCP application)"
 sudo qemu-system-arm \
     -machine mps2-an385 \
     -cpu cortex-m3 \

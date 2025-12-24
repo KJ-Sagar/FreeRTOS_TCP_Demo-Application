@@ -44,4 +44,4 @@ build/demo_echo_server.o: demo_echo_server.c \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IPv4.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IPv6.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_Sockets.h \
- demo_echo_server.h FreeRTOSIPConfig.h
+ FreeRTOSIPConfig.h demo_echo_server.h
