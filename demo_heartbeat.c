@@ -4,7 +4,7 @@
 #include "FreeRTOS_Sockets.h"
 #include "FreeRTOS_IP.h"
 #include "app_config.h"
-
+#include "tcp_heartbeat_demo.h"
 
 void vStartHeartbeatDemo( void )
 {

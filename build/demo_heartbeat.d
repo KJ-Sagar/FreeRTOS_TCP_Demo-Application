@@ -44,4 +44,4 @@ build/demo_heartbeat.o: demo_heartbeat.c demo_heartbeat.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IPv6_Utils.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IPv4.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IPv6.h \
- app_config.h
+ app_config.h tcp_heartbeat_demo.h
