@@ -1,12 +1,19 @@
 #include "FreeRTOS.h"
-#include "task.h"
-#include "demo_selector.h"
+#include "FreeRTOS_IP.h"
 
-/* This function is called from the network-up hook */
+#include "app_config.h"
+#include "app_main.h"
+#include "demo_echo.h"
+#include "tcp_heartbeat_demo.h"
+
 void vApplicationStart( void )
 {
-    FreeRTOS_printf( ( "APP: Application start\n" ) );
-
-    /* Select and start demo based on config */
-    vDemoSelectorStart();
+#if DEMO_HEARTBEAT
+    vStartTCPHeartbeatDemo();
+#elif DEMO_ECHO
+    vStartEchoDemo();
+#else
+    FreeRTOS_printf( ( "APP: No demo selected\r\n" ) );
+#endif
 }
+/*-----------------------------------------------------------*/

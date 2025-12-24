@@ -46,4 +46,4 @@ build/main_networking.o: main_networking.c \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_Sockets.h \
  CMSIS/CMSDK_CM3.h CMSIS/core_cm3.h CMSIS/cmsis_version.h \
  CMSIS/cmsis_compiler.h CMSIS/cmsis_gcc.h CMSIS/mpu_armv7.h \
- main_networking.h tcp_heartbeat_demo.h
+ main_networking.h tcp_heartbeat_demo.h app_main.h

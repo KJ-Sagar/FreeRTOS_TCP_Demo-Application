@@ -34,6 +34,7 @@
 #include "CMSIS/CMSDK_CM3.h"
 #include "main_networking.h"
 #include "tcp_heartbeat_demo.h"
+#include "app_main.h"
 
 /*-----------------------------------------------------------*/
 /* Define a name that will be used for LLMNR and NBNS searches. */
@@ -208,9 +209,9 @@ void vApplicationIPNetworkEventHook( eIPCallbackEvent_t eNetworkEvent )
         FreeRTOS_printf( ( "IP Address: %s\r\n", cBuffer ) );
 
         /* Start demo application tasks here */
-        vStartTCPHeartbeatDemo();
-
+        vApplicationStart();
         xTasksAlreadyCreated = pdTRUE;
+
     }
 }
 /*-----------------------------------------------------------*/

@@ -1,21 +1,14 @@
-#include "FreeRTOS.h"
-#include "task.h"
-#include "FreeRTOS_Sockets.h"
-#include "FreeRTOS_IP.h"
-#include "demo_echo_server.h"
-
-#define ECHO_SERVER_PORT   5001
-#define ECHO_STACK_SIZE   ( configMINIMAL_STACK_SIZE * 2 )
-#define ECHO_PRIORITY     ( tskIDLE_PRIORITY + 1 )
-
 static void prvEchoServerTask( void * pvParameters )
 {
     Socket_t xListenSocket, xClientSocket;
     struct freertos_sockaddr xBindAddress;
     char rxBuffer[128];
     BaseType_t xRx;
+    TickType_t xTimeout = pdMS_TO_TICKS( 5000 );
 
-    FreeRTOS_printf( ( "ECHO SERVER: Starting\r\n" ) );
+    ( void ) pvParameters;
+
+    FreeRTOS_printf( ( "ECHO SERVER: Starting on port %d\r\n", ECHO_SERVER_PORT ) );
 
     xListenSocket = FreeRTOS_socket(
         FREERTOS_AF_INET,
@@ -25,6 +18,7 @@ static void prvEchoServerTask( void * pvParameters )
 
     configASSERT( xListenSocket != FREERTOS_INVALID_SOCKET );
 
+    memset( &xBindAddress, 0, sizeof( xBindAddress ) );
     xBindAddress.sin_port = FreeRTOS_htons( ECHO_SERVER_PORT );
 
     FreeRTOS_bind( xListenSocket, &xBindAddress, sizeof( xBindAddress ) );
@@ -38,6 +32,14 @@ static void prvEchoServerTask( void * pvParameters )
         if( xClientSocket == FREERTOS_INVALID_SOCKET )
             continue;
 
+        FreeRTOS_setsockopt(
+            xClientSocket,
+            0,
+            FREERTOS_SO_RCVTIMEO,
+            &xTimeout,
+            sizeof( xTimeout )
+        );
+
         FreeRTOS_printf( ( "ECHO SERVER: Client connected\r\n" ) );
 
         for( ;; )
@@ -45,12 +47,15 @@ static void prvEchoServerTask( void * pvParameters )
             xRx = FreeRTOS_recv(
                 xClientSocket,
                 rxBuffer,
-                sizeof( rxBuffer ),
+                sizeof( rxBuffer ) - 1,
                 0
             );
 
             if( xRx <= 0 )
                 break;
+
+            rxBuffer[xRx] = '\0';
+            FreeRTOS_printf( ( "ECHO SERVER RX: %s\r\n", rxBuffer ) );
 
             FreeRTOS_send(
                 xClientSocket,
@@ -63,16 +68,4 @@ static void prvEchoServerTask( void * pvParameters )
         FreeRTOS_printf( ( "ECHO SERVER: Client disconnected\r\n" ) );
         FreeRTOS_closesocket( xClientSocket );
     }
-}
-
-void vStartEchoServer( void )
-{
-    xTaskCreate(
-        prvEchoServerTask,
-        "EchoServer",
-        ECHO_STACK_SIZE,
-        NULL,
-        ECHO_PRIORITY,
-        NULL
-    );
 }

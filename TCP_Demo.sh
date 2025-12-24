@@ -72,8 +72,8 @@ echo "TAP interface $TAP_IF up with IP $HOST_IP"
 
 ### 3. Start netcat echo server ###
 echo "[3/4] Starting netcat echo server on port $ECHO_PORT"
-nc -l -p $ECHO_PORT_LETTERS &
-nc -l -p $ECHO_PORT &
+#nc -l -p $ECHO_PORT_LETTERS &
+#nc -l -p $ECHO_PORT &
 NC_PID=$!
 
 sleep 1
