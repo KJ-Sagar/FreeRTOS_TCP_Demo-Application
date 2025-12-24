@@ -1,5 +1,6 @@
-build/demo_heartbeat.o: demo_heartbeat.c demo_heartbeat.h \
- /home/kj/FreeRTOS/FreeRTOS/Source/include/FreeRTOS.h FreeRTOSConfig.h \
+build/app/demos/demo_echo.o: app/demos/demo_echo.c \
+ /home/kj/FreeRTOS/FreeRTOS/Source/include/FreeRTOS.h \
+ config/FreeRTOSConfig.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/projdefs.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/portable.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/deprecated_definitions.h \
@@ -8,7 +9,7 @@ build/demo_heartbeat.o: demo_heartbeat.c demo_heartbeat.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/task.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/list.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_Sockets.h \
- FreeRTOSIPConfig.h \
+ config/FreeRTOSIPConfig.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOSIPConfigDefaults.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOSIPDeprecatedDefinitions.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/IPTraceMacroDefaults.h \
@@ -44,4 +45,4 @@ build/demo_heartbeat.o: demo_heartbeat.c demo_heartbeat.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IPv6_Utils.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IPv4.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IPv6.h \
- app_config.h tcp_heartbeat_demo.h
+ app/app_config.h app/demos/demo_echo.h TCPEchoClient_SingleTasks.h

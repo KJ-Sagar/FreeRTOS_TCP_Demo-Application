@@ -1,6 +1,7 @@
 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o: \
  /home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c \
- /home/kj/FreeRTOS/FreeRTOS/Source/include/FreeRTOS.h FreeRTOSConfig.h \
+ /home/kj/FreeRTOS/FreeRTOS/Source/include/FreeRTOS.h \
+ config/FreeRTOSConfig.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/projdefs.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/portable.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/deprecated_definitions.h \

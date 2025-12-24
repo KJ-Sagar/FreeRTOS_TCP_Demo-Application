@@ -1,5 +1,6 @@
-build/app_main.o: app_main.c \
- /home/kj/FreeRTOS/FreeRTOS/Source/include/FreeRTOS.h FreeRTOSConfig.h \
+build/app/app_main.o: app/app_main.c \
+ /home/kj/FreeRTOS/FreeRTOS/Source/include/FreeRTOS.h \
+ config/FreeRTOSConfig.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/projdefs.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/portable.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/deprecated_definitions.h \
@@ -7,7 +8,8 @@ build/app_main.o: app_main.c \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/mpu_wrappers.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IP.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/task.h \
- /home/kj/FreeRTOS/FreeRTOS/Source/include/list.h FreeRTOSIPConfig.h \
+ /home/kj/FreeRTOS/FreeRTOS/Source/include/list.h \
+ config/FreeRTOSIPConfig.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOSIPConfigDefaults.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOSIPDeprecatedDefinitions.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/IPTraceMacroDefaults.h \
@@ -42,4 +44,5 @@ build/app_main.o: app_main.c \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IPv6_Utils.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IPv4.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IPv6.h \
- app_config.h app_main.h demo_echo.h tcp_heartbeat_demo.h
+ app/app_config.h app/app_main.h app/demos/demo_echo.h \
+ tcp_heartbeat_demo.h

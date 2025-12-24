@@ -65,10 +65,14 @@ ip link set $TAP_IF up
 
 echo "TAP interface $TAP_IF up with IP $HOST_IP"
 
-### 3. Network ready ###
-echo "[3/4] Linux ready (QEMU hosts TCP server)"
+if grep -q "APP_DEMO_HEARTBEAT 1" app_config.h; then
+    echo "[3/4] Starting Linux heartbeat server"
+    nc -l -p 5001 &
+    NC_PID=$!
+else
+    echo "[3/4] Linux ready (QEMU hosts TCP server)"
+fi
 
-sleep 1
 
 ### 4. Run QEMU ###
 echo "[4/4] Launching QEMU (FreeRTOS TCP application)"

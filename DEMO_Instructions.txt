@@ -1,0 +1,135 @@
+FreeRTOS TCP Demo – Run Instructions
+===================================
+
+This project demonstrates FreeRTOS+TCP running on QEMU (MPS2) using
+a Linux TAP interface. Linux and QEMU communicate using real TCP.
+
+IP Configuration
+----------------
+Linux (tap0) : 10.0.0.1
+QEMU          : 10.0.0.2
+Port used     : 5001
+
+
+------------------------------------------------------------
+GENERAL SETUP (REQUIRED FOR ALL DEMOS)
+------------------------------------------------------------
+
+1. Build the project:
+   make clean
+   make
+
+2. Open TWO terminals:
+   - Terminal 1: Linux TCP side
+   - Terminal 2: QEMU / FreeRTOS side
+
+3. Ensure app_config.h is configured correctly
+   (ONLY ONE role and ONE demo should be enabled)
+
+
+------------------------------------------------------------
+DEMO 1: HEARTBEAT DEMO
+(QEMU = TCP CLIENT, Linux = TCP SERVER)
+------------------------------------------------------------
+
+Purpose:
+- FreeRTOS (QEMU) periodically sends heartbeat messages
+- Linux receives and displays them
+
+Configuration (app_config.h):
+--------------------------------
+#define APP_ROLE_CLIENT     1
+#define APP_ROLE_SERVER     0
+
+#define APP_DEMO_ECHO       0
+#define APP_DEMO_HEARTBEAT  1
+
+Steps:
+------
+
+Terminal 1 (Linux TCP Server):
+   nc -l -p 5001
+
+Terminal 2 (QEMU):
+   sudo ./TCP_Demo.sh
+
+Expected Result (Linux terminal):
+---------------------------------
+HEARTBEAT 0
+HEARTBEAT 1
+HEARTBEAT 2
+...
+
+Expected Result (QEMU terminal):
+--------------------------------
+HB: Connecting to 10.0.0.1:5001
+HB: Connected
+
+
+------------------------------------------------------------
+DEMO 2: TCP ECHO SERVER DEMO
+(QEMU = TCP SERVER, Linux = TCP CLIENT)
+------------------------------------------------------------
+
+Purpose:
+- FreeRTOS (QEMU) listens on a TCP port
+- Linux connects and sends messages
+- QEMU echoes data back
+
+Configuration (app_config.h):
+--------------------------------
+#define APP_ROLE_CLIENT     0
+#define APP_ROLE_SERVER     1
+
+#define APP_DEMO_ECHO       1
+#define APP_DEMO_HEARTBEAT  0
+
+Steps:
+------
+
+Terminal 2 (QEMU – start server):
+   sudo ./TCP_Demo.sh
+
+Terminal 1 (Linux client):
+   nc 10.0.0.2 5001
+   hello qemu
+
+Expected Result (QEMU terminal):
+--------------------------------
+[ECHO SERVER] Client connected
+[ECHO SERVER RX]: hello qemu
+
+Expected Result (Linux terminal):
+---------------------------------
+hello qemu   (echoed back)
+
+
+------------------------------------------------------------
+COMMON NOTES
+------------------------------------------------------------
+
+- Do NOT run nc as client on both sides.
+- Exactly one side must listen (-l).
+- Output appears on the side that RECEIVES data.
+- Firewall is temporarily disabled by TCP_Demo.sh.
+- Stop QEMU using Ctrl+C.
+
+
+------------------------------------------------------------
+TROUBLESHOOTING
+------------------------------------------------------------
+
+No output?
+- Check role selection in app_config.h
+- Ensure correct IP (10.0.0.1 or 10.0.0.2)
+- Ensure correct port (5001)
+- Ensure nc is listening when required
+
+Connection failed?
+- Ensure only ONE side is server
+- Ensure QEMU is fully booted before connecting
+
+
+------------------------------------------------------------
+END OF FILE
+------------------------------------------------------------

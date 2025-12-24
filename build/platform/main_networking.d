@@ -1,5 +1,6 @@
-build/demo_echo.o: demo_echo.c \
- /home/kj/FreeRTOS/FreeRTOS/Source/include/FreeRTOS.h FreeRTOSConfig.h \
+build/platform/main_networking.o: platform/main_networking.c \
+ /home/kj/FreeRTOS/FreeRTOS/Source/include/FreeRTOS.h \
+ config/FreeRTOSConfig.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/projdefs.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/portable.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/deprecated_definitions.h \
@@ -7,24 +8,23 @@ build/demo_echo.o: demo_echo.c \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/mpu_wrappers.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/task.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/list.h \
- /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_Sockets.h \
- FreeRTOSIPConfig.h \
+ /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IP.h \
+ config/FreeRTOSIPConfig.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOSIPConfigDefaults.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOSIPDeprecatedDefinitions.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/IPTraceMacroDefaults.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IP_Common.h \
- /home/kj/FreeRTOS/FreeRTOS/Source/include/event_groups.h \
- /home/kj/FreeRTOS/FreeRTOS/Source/include/timers.h \
- /home/kj/FreeRTOS/FreeRTOS/Source/include/task.h \
- /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IP.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/Compiler/GCC/pack_struct_start.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/Compiler/GCC/pack_struct_end.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IP_Utils.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/queue.h \
+ /home/kj/FreeRTOS/FreeRTOS/Source/include/task.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/semphr.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/queue.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IP.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_Sockets.h \
+ /home/kj/FreeRTOS/FreeRTOS/Source/include/event_groups.h \
+ /home/kj/FreeRTOS/FreeRTOS/Source/include/timers.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IP_Private.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_Stream_Buffer.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_Routing.h \
@@ -44,4 +44,7 @@ build/demo_echo.o: demo_echo.c \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IPv6_Utils.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IPv4.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IPv6.h \
- app_config.h demo_echo.h TCPEchoClient_SingleTasks.h
+ /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_Sockets.h \
+ CMSIS/CMSDK_CM3.h CMSIS/core_cm3.h CMSIS/cmsis_version.h \
+ CMSIS/cmsis_compiler.h CMSIS/cmsis_gcc.h CMSIS/mpu_armv7.h \
+ platform/main_networking.h tcp_heartbeat_demo.h app/app_main.h

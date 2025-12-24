@@ -1,112 +1,136 @@
-CC = arm-none-eabi-gcc
+# =========================================================
+# Toolchain
+# =========================================================
+CC   = arm-none-eabi-gcc
 SIZE = arm-none-eabi-size
-BIN := freertos_tcp_mps2_demo.axf
 
+BIN       := freertos_tcp_mps2_demo.axf
 BUILD_DIR := build
 
+# =========================================================
+# FreeRTOS Paths
+# =========================================================
 FREERTOS_DIR_REL := ../../../FreeRTOS
-FREERTOS_DIR := $(abspath $(FREERTOS_DIR_REL))
-KERNEL_DIR := $(FREERTOS_DIR)/Source
+FREERTOS_DIR     := $(abspath $(FREERTOS_DIR_REL))
+KERNEL_DIR       := $(FREERTOS_DIR)/Source
 
 FREERTOS_PLUS_DIR_REL := ../../../FreeRTOS-Plus
-FREERTOS_PLUS_DIR := $(abspath $(FREERTOS_PLUS_DIR_REL))
+FREERTOS_PLUS_DIR     := $(abspath $(FREERTOS_PLUS_DIR_REL))
+FREERTOS_TCP          := $(FREERTOS_PLUS_DIR)/Source/FreeRTOS-Plus-TCP
 
-INCLUDE_DIRS += -I.
+# =========================================================
+# Include Paths
+# =========================================================
+INCLUDE_DIRS += \
+    -I. \
+    -Iconfig \
+    -Iplatform \
+    -Iapp \
+    -Iapp/demos \
+    -ICMSIS \
+    -I$(KERNEL_DIR)/include \
+    -I$(KERNEL_DIR)/portable/GCC/ARM_CM3 \
+    -I$(FREERTOS_TCP)/source/include \
+    -I$(FREERTOS_TCP)/source/portable/Compiler/GCC \
+    -I$(FREERTOS_TCP)/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118
 
-FREERTOS_TCP = ${FREERTOS_PLUS_DIR}/Source/FreeRTOS-Plus-TCP
+# =========================================================
+# Source Files
+# =========================================================
 
-# Demo Source Files
-SOURCE_FILES += startup.c
-SOURCE_FILES += syscalls.c
-SOURCE_FILES += main.c
-SOURCE_FILES += main_networking.c
-SOURCE_FILES += TCPEchoClient_SingleTasks.c
-SOURCE_FILES += tcp_heartbeat_demo.c
-INCLUDE_DIRS += -ICMSIS
+# --- Startup / system ---
+SOURCE_FILES += \
+    startup.c \
+    syscalls.c
 
-APP_SRCS = \
-    app_main.c \
-    network_role.c \
-    demo_selector.c \
-    demo_echo.c \
-    demo_heartbeat.c\
-    demo_echo_server.c
-SOURCE_FILES += $(APP_SRCS)
+# --- Platform (entry + networking) ---
+SOURCE_FILES += \
+    platform/main.c \
+    platform/main_networking.c
 
+# --- Application core ---
+SOURCE_FILES += \
+    app/app_main.c \
+    app/network_role.c \
+    app/demo_selector.c
+
+# --- Application demos ---
+SOURCE_FILES += \
+    app/demos/demo_echo.c \
+    app/demos/demo_echo_server.c \
+    app/demos/demo_heartbeat.c
+
+# --- Existing FreeRTOS TCP demos reused ---
+SOURCE_FILES += \
+    TCPEchoClient_SingleTasks.c \
+    tcp_heartbeat_demo.c
+
+# =========================================================
 # FreeRTOS Kernel
-INCLUDE_DIRS += -I$(KERNEL_DIR)/include
+# =========================================================
+SOURCE_FILES += \
+    $(KERNEL_DIR)/tasks.c \
+    $(KERNEL_DIR)/list.c \
+    $(KERNEL_DIR)/queue.c \
+    $(KERNEL_DIR)/event_groups.c \
+    $(KERNEL_DIR)/portable/GCC/ARM_CM3/port.c \
+    $(KERNEL_DIR)/portable/MemMang/heap_3.c
 
-SOURCE_FILES += $(KERNEL_DIR)/tasks.c
-SOURCE_FILES += $(KERNEL_DIR)/list.c
-SOURCE_FILES += $(KERNEL_DIR)/queue.c
-SOURCE_FILES += $(KERNEL_DIR)/event_groups.c
+# =========================================================
+# FreeRTOS+TCP Stack
+# =========================================================
+SOURCE_FILES += \
+    $(wildcard $(FREERTOS_PLUS_DIR)/Source/FreeRTOS-Plus-TCP/source/*.c) \
+    $(FREERTOS_TCP)/source/portable/BufferManagement/BufferAllocation_2.c \
+    $(FREERTOS_TCP)/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.c \
+    $(FREERTOS_TCP)/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.c
 
-# FreeRTOS Kernel ARM Cortex-M3 Port
-INCLUDE_DIRS += -I$(KERNEL_DIR)/portable/GCC/ARM_CM3
-
-SOURCE_FILES += $(KERNEL_DIR)/portable/GCC/ARM_CM3/port.c
-SOURCE_FILES += ${KERNEL_DIR}/portable/MemMang/heap_3.c
-
-# FreeRTOS+TCP
-INCLUDE_DIRS += -I${FREERTOS_TCP}/source/include/
-
-SOURCE_FILES += $(wildcard ${FREERTOS_PLUS_DIR}/Source/FreeRTOS-Plus-TCP/source/*.c )
-
-# FreeRTOS+TCP Port for ARM MPS2 SoC
-INCLUDE_DIRS += -I${FREERTOS_TCP}/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118
-INCLUDE_DIRS += -I${FREERTOS_TCP}/source/portable/Compiler/GCC
-
-SOURCE_FILES += ${FREERTOS_TCP}/source/portable/BufferManagement/BufferAllocation_2.c
-SOURCE_FILES += ${FREERTOS_TCP}/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.c
-SOURCE_FILES += ${FREERTOS_TCP}/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.c
-
+# =========================================================
+# Compiler Flags
+# =========================================================
 CPPFLAGS += -DHEAP3
 
-ifeq ($(PICOLIBC), 1)
-    CFLAGS += --specs=picolibc.specs -DPICOLIBC_INTEGER_PRINTF_SCANF --oslib=semihost
-endif
-CFLAGS += -mthumb -mcpu=cortex-m3
-ifeq ($(DEBUG), 1)
-    CFLAGS += -g3 -Og -ffunction-sections -fdata-sections
-else
-    CFLAGS += -Os -ffunction-sections -fdata-sections
-endif
-#CFLAGS += -flto
-CFLAGS += -Wall -Wextra -Wshadow
-#CFLAGS += -Wpedantic -fanalyzer
-CFLAGS += -MMD
-CFLAGS += $(INCLUDE_DIRS)
+CFLAGS += \
+    -mthumb \
+    -mcpu=cortex-m3 \
+    -Wall -Wextra -Wshadow \
+    -ffunction-sections -fdata-sections \
+    -MMD \
+    $(INCLUDE_DIRS)
 
-LDFLAGS = -T mps2_m3.ld
-LDFLAGS += -Xlinker -Map=${BUILD_DIR}/output.map
-LDFLAGS += -Xlinker --gc-sections
-#LDFLAGS += -Xlinker --print-gc-sections
-ifeq ($(PICOLIBC), 1)
-    LDFLAGS += -nostartfiles
+ifeq ($(DEBUG),1)
+    CFLAGS += -g3 -Og
 else
-    LDFLAGS += -nostartfiles -specs=nano.specs -specs=nosys.specs -specs=rdimon.specs
+    CFLAGS += -Os
 endif
 
+# =========================================================
+# Linker Flags
+# =========================================================
+LDFLAGS += \
+    -T mps2_m3.ld \
+    -Xlinker --gc-sections \
+    -Xlinker -Map=$(BUILD_DIR)/output.map \
+    -nostartfiles \
+    -specs=nano.specs \
+    -specs=nosys.specs \
+    -specs=rdimon.specs
+
+# =========================================================
+# Build Rules
+# =========================================================
 OBJ_FILES := $(SOURCE_FILES:%.c=$(BUILD_DIR)/%.o)
 
-.PHONY: clean
-
 $(BUILD_DIR)/$(BIN): $(OBJ_FILES)
-	$(CC) $(CFLAGS) $(LDFLAGS) $+ -o $(@)
-	$(SIZE) $(@)
+	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@
+	$(SIZE) $@
 
-%.d: %.c
-	@set -e; rm -f $@; \
-	$(CC) -M $(CPPFLAGS) $< > $@.$$$$; \
-	sed 's,\($*\)\.o[ :]*,\1.o $@ : ,g' < $@.$$$$ > $@; \
-	rm -f $@.$$$$
+$(BUILD_DIR)/%.o: %.c Makefile
+	@mkdir -p $(@D)
+	$(CC) $(CFLAGS) -c $< -o $@
 
-INCLUDES := $(SOURCE_FILES:%.c=$(BUILD_DIR)/%.d)
--include $(INCLUDES)
+-include $(OBJ_FILES:.o=.d)
 
-${BUILD_DIR}/%.o: %.c Makefile
-	-mkdir -p $(@D)
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
-
+.PHONY: clean
 clean:
-	-rm -rf build
+	rm -rf $(BUILD_DIR)

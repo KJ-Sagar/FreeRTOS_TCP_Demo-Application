@@ -1,5 +1,6 @@
 build/TCPEchoClient_SingleTasks.o: TCPEchoClient_SingleTasks.c \
- /home/kj/FreeRTOS/FreeRTOS/Source/include/FreeRTOS.h FreeRTOSConfig.h \
+ /home/kj/FreeRTOS/FreeRTOS/Source/include/FreeRTOS.h \
+ config/FreeRTOSConfig.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/projdefs.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/portable.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/deprecated_definitions.h \
@@ -12,7 +13,7 @@ build/TCPEchoClient_SingleTasks.o: TCPEchoClient_SingleTasks.c \
  CMSIS/core_cm3.h CMSIS/cmsis_version.h CMSIS/cmsis_compiler.h \
  CMSIS/cmsis_gcc.h CMSIS/mpu_armv7.h CMSIS/core_cm3.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IP.h \
- FreeRTOSIPConfig.h \
+ config/FreeRTOSIPConfig.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOSIPConfigDefaults.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOSIPDeprecatedDefinitions.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/IPTraceMacroDefaults.h \
