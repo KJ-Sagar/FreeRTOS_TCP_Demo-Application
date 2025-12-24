@@ -12,7 +12,7 @@ set -e
 ### CONFIG ###
 TAP_IF=tap0
 HOST_IP=10.0.0.1/24
-ELF=./build/freertos_tcp_mps2_demo.axf
+ELF=../build/freertos_tcp_mps2_demo.axf
 ################
 
 echo "=== FreeRTOS TCP Demo (QEMU + TAP) ==="
@@ -65,7 +65,7 @@ ip link set $TAP_IF up
 
 echo "TAP interface $TAP_IF up with IP $HOST_IP"
 
-if grep -q "APP_DEMO_HEARTBEAT 1" app_config.h; then
+if grep -q "APP_DEMO_HEARTBEAT 1" ../app/app_config.h; then
     echo "[3/4] Starting Linux heartbeat server"
     nc -l -p 5001 &
     NC_PID=$!

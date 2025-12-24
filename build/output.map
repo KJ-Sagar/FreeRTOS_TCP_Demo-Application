@@ -148,7 +148,7 @@ Discarded input sections
  .rodata.vStartEchoDemo.str1.1
                 0x0000000000000000       0x2d build/app/demos/demo_echo.o
  .text.vStartEchoDemo
-                0x0000000000000000       0x34 build/app/demos/demo_echo.o
+                0x0000000000000000       0x2c build/app/demos/demo_echo.o
  .rodata.__FUNCTION__.0
                 0x0000000000000000        0xf build/app/demos/demo_echo.o
  .comment       0x0000000000000000       0x34 build/app/demos/demo_echo.o

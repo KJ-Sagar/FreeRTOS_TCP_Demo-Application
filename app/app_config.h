@@ -2,8 +2,8 @@
 #define APP_CONFIG_H
 
 /* Role selection */
-#define APP_ROLE_CLIENT     1
-#define APP_ROLE_SERVER     0
+#define APP_ROLE_CLIENT     0
+#define APP_ROLE_SERVER     1
 
 /* Demo selection (ONLY ONE should be 1) */
 #define DEMO_ECHO           0
