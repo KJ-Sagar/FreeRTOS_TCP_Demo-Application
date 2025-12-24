@@ -18,7 +18,8 @@ void vStartEchoDemo( void )
     );
 
 #elif APP_ROLE_SERVER
-    FreeRTOS_printf( ( "ECHO: TCP Echo SERVER not implemented yet\r\n" ) );
+    FreeRTOS_printf( ( "ECHO: Starting TCP Echo SERVER\r\n" ) );
+    vStartEchoServer();
 #endif
 }
 /*-----------------------------------------------------------*/

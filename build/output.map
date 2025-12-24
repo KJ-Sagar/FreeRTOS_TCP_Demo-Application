@@ -156,6 +156,19 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/tcp_heartbeat_demo.o
  .data          0x0000000000000000        0x0 build/tcp_heartbeat_demo.o
  .bss           0x0000000000000000        0x0 build/tcp_heartbeat_demo.o
+ .rodata.prvTCPHeartbeatTask.str1.1
+                0x0000000000000000       0x84 build/tcp_heartbeat_demo.o
+ .text.prvTCPHeartbeatTask
+                0x0000000000000000      0x12c build/tcp_heartbeat_demo.o
+ .rodata.vStartTCPHeartbeatDemo.str1.1
+                0x0000000000000000        0x7 build/tcp_heartbeat_demo.o
+ .text.vStartTCPHeartbeatDemo
+                0x0000000000000000       0x24 build/tcp_heartbeat_demo.o
+ .rodata.__FUNCTION__.0
+                0x0000000000000000       0x14 build/tcp_heartbeat_demo.o
+ .comment       0x0000000000000000       0x34 build/tcp_heartbeat_demo.o
+ .ARM.attributes
+                0x0000000000000000       0x2d build/tcp_heartbeat_demo.o
  .text          0x0000000000000000        0x0 build/app_main.o
  .data          0x0000000000000000        0x0 build/app_main.o
  .bss           0x0000000000000000        0x0 build/app_main.o
@@ -182,15 +195,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/demo_echo.o
  .data          0x0000000000000000        0x0 build/demo_echo.o
  .bss           0x0000000000000000        0x0 build/demo_echo.o
- .rodata.vStartEchoDemo.str1.1
-                0x0000000000000000       0x38 build/demo_echo.o
- .text.vStartEchoDemo
-                0x0000000000000000       0x28 build/demo_echo.o
- .rodata.__FUNCTION__.0
-                0x0000000000000000        0xf build/demo_echo.o
- .comment       0x0000000000000000       0x34 build/demo_echo.o
- .ARM.attributes
-                0x0000000000000000       0x2d build/demo_echo.o
  .text          0x0000000000000000        0x0 build/demo_heartbeat.o
  .data          0x0000000000000000        0x0 build/demo_heartbeat.o
  .bss           0x0000000000000000        0x0 build/demo_heartbeat.o
@@ -206,19 +210,9 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/demo_echo_server.o
  .data          0x0000000000000000        0x0 build/demo_echo_server.o
  .bss           0x0000000000000000        0x0 build/demo_echo_server.o
- .rodata.prvEchoServerTask.str1.1
-                0x0000000000000000       0x8c build/demo_echo_server.o
- .text.prvEchoServerTask
-                0x0000000000000000       0xe0 build/demo_echo_server.o
- .rodata.vStartEchoServer.str1.1
-                0x0000000000000000        0xb build/demo_echo_server.o
- .text.vStartEchoServer
-                0x0000000000000000       0x24 build/demo_echo_server.o
- .rodata.__FUNCTION__.0
-                0x0000000000000000       0x12 build/demo_echo_server.o
  .comment       0x0000000000000000       0x34 build/demo_echo_server.o
  .ARM.attributes
-                0x0000000000000000       0x2d build/demo_echo_server.o
+                0x0000000000000000       0x33 build/demo_echo_server.o
  .text          0x0000000000000000        0x0 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
  .data          0x0000000000000000        0x0 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
  .bss           0x0000000000000000        0x0 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
@@ -232,8 +226,12 @@ Discarded input sections
                 0x0000000000000000       0x1c build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
  .text.xTaskCatchUpTicks
                 0x0000000000000000       0x34 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+ .text.vTaskPlaceOnUnorderedEventList
+                0x0000000000000000       0x58 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
  .text.xTaskGetCurrentTaskHandleForCore
                 0x0000000000000000       0x10 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+ .text.uxTaskResetEventItemValue
+                0x0000000000000000       0x18 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
  .text.xTaskGenericNotifyWait
                 0x0000000000000000       0xd0 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
  .text.xTaskGenericNotify
@@ -283,6 +281,8 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build//home/kj/FreeRTOS/FreeRTOS/Source/event_groups.o
  .data          0x0000000000000000        0x0 build//home/kj/FreeRTOS/FreeRTOS/Source/event_groups.o
  .bss           0x0000000000000000        0x0 build//home/kj/FreeRTOS/FreeRTOS/Source/event_groups.o
+ .text.xEventGroupWaitBits
+                0x0000000000000000       0xce build//home/kj/FreeRTOS/FreeRTOS/Source/event_groups.o
  .text.xEventGroupGetBitsFromISR
                 0x0000000000000000       0x1c build//home/kj/FreeRTOS/FreeRTOS/Source/event_groups.o
  .text.xEventGroupSync
@@ -499,9 +499,15 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.o
  .data          0x0000000000000000        0x0 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.o
  .bss           0x0000000000000000        0x0 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.o
+ .rodata.FreeRTOS_inet_pton4.str1.1
+                0x0000000000000000       0x43 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.o
+ .text.FreeRTOS_inet_pton4
+                0x0000000000000000       0xa4 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.o
  .text.xSend_UDP_Update_IPv4
                 0x0000000000000000       0x16 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.o
  .text.xRecv_Update_IPv4
+                0x0000000000000000       0x14 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.o
+ .rodata.__FUNCTION__.0
                 0x0000000000000000       0x14 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.o
  .text          0x0000000000000000        0x0 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.o
  .data          0x0000000000000000        0x0 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.o
@@ -552,6 +558,8 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .data          0x0000000000000000        0x0 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .bss           0x0000000000000000        0x0 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+ .text.prvTCPSendCheck
+                0x0000000000000000       0x5e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .text.prvFindSelectedSocket
                 0x0000000000000000       0x36 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .text.FreeRTOS_CreateSocketSet
@@ -568,8 +576,12 @@ Discarded input sections
                 0x0000000000000000       0x4a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .text.FreeRTOS_recvfrom
                 0x0000000000000000       0xda build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+ .text.FreeRTOS_bind
+                0x0000000000000000       0x8c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .text.FreeRTOS_sendto
                 0x0000000000000000      0x106 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+ .text.FreeRTOS_closesocket
+                0x0000000000000000       0x2e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .rodata.prvSocketProps.str1.1
                 0x0000000000000000       0x2a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .text.prvSocketProps
@@ -582,6 +594,8 @@ Discarded input sections
                 0x0000000000000000       0x46 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .text.FreeRTOS_EUI48_pton
                 0x0000000000000000       0x5c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+ .text.FreeRTOS_inet_addr
+                0x0000000000000000       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .rodata.FreeRTOS_accept.str1.1
                 0x0000000000000000       0x2a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .text.FreeRTOS_accept
@@ -592,6 +606,8 @@ Discarded input sections
                 0x0000000000000000       0x36 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .text.FreeRTOS_get_tx_head
                 0x0000000000000000       0x52 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+ .text.FreeRTOS_send
+                0x0000000000000000      0x108 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .text.FreeRTOS_shutdown
                 0x0000000000000000       0x3c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .text.FreeRTOS_get_rx_buf
@@ -600,6 +616,20 @@ Discarded input sections
                 0x0000000000000000       0x2c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .text.FreeRTOS_maywrite
                 0x0000000000000000       0x36 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+ .text.FreeRTOS_tx_size
+                0x0000000000000000       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+ .text.FreeRTOS_issocketconnected
+                0x0000000000000000       0x1e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+ .rodata.prvSockopt_so_buffer.str1.1
+                0x0000000000000000       0x9a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+ .text.prvSockopt_so_buffer
+                0x0000000000000000       0xc4 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+ .text.FreeRTOS_setsockopt
+                0x0000000000000000      0x192 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+ .rodata.FreeRTOS_connect.str1.1
+                0x0000000000000000       0x21 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+ .text.FreeRTOS_connect
+                0x0000000000000000      0x128 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .text.FreeRTOS_mss
                 0x0000000000000000       0x12 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .text.FreeRTOS_connstatus
@@ -618,6 +648,10 @@ Discarded input sections
                 0x0000000000000000       0x5c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .rodata.__FUNCTION__.4
                 0x0000000000000000       0x14 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+ .rodata.__FUNCTION__.5
+                0x0000000000000000       0x13 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+ .rodata.__FUNCTION__.6
+                0x0000000000000000       0x15 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .rodata.__FUNCTION__.7
                 0x0000000000000000       0x19 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .text          0x0000000000000000        0x0 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
@@ -993,7 +1027,7 @@ END GROUP
                 0x0000000000000000                isr_vector
                 0x0000000000000078                . = ALIGN (0x4)
 
-.text           0x0000000000000078     0xb4f0
+.text           0x0000000000000078     0xaa68
                 0x0000000000000078                . = ALIGN (0x4)
  *(.text*)
  .text.Reset_Handler
@@ -1057,1217 +1091,1157 @@ END GROUP
  .text.xApplicationGetRandomNumber
                 0x00000000000002e0       0x20 build/main_networking.o
                 0x00000000000002e0                xApplicationGetRandomNumber
- .text.prvTCPHeartbeatTask
-                0x0000000000000300      0x12c build/tcp_heartbeat_demo.o
- .text.vStartTCPHeartbeatDemo
-                0x000000000000042c       0x24 build/tcp_heartbeat_demo.o
-                0x000000000000042c                vStartTCPHeartbeatDemo
  .text.vApplicationStart
-                0x0000000000000450        0x4 build/app_main.o
-                0x0000000000000450                vApplicationStart
+                0x0000000000000300        0x4 build/app_main.o
+                0x0000000000000300                vApplicationStart
+ .text.vStartEchoDemo
+                0x0000000000000304       0x2c build/demo_echo.o
+                0x0000000000000304                vStartEchoDemo
  .text.prvIdleTask
-                0x0000000000000454        0x2 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
- *fill*         0x0000000000000456        0x2 
+                0x0000000000000330        0x2 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+ *fill*         0x0000000000000332        0x2 
  .text.prvResetNextTaskUnblockTime
-                0x0000000000000458       0x24 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0000000000000334       0x24 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
  .text.prvAddCurrentTaskToDelayedList.constprop.0
-                0x000000000000047c       0x78 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0000000000000358       0x78 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
  .text.xTaskCreate
-                0x00000000000004f4      0x1b4 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x00000000000004f4                xTaskCreate
+                0x00000000000003d0      0x1b4 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x00000000000003d0                xTaskCreate
  .text.vTaskStartScheduler
-                0x00000000000006a8       0x88 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x00000000000006a8                vTaskStartScheduler
+                0x0000000000000584       0x88 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0000000000000584                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x0000000000000730       0x10 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000730                vTaskSuspendAll
+                0x000000000000060c       0x10 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x000000000000060c                vTaskSuspendAll
  .text.xTaskGetTickCount
-                0x0000000000000740        0xc build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000740                xTaskGetTickCount
+                0x000000000000061c        0xc build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x000000000000061c                xTaskGetTickCount
  .text.xTaskIncrementTick
-                0x000000000000074c      0x17c build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x000000000000074c                xTaskIncrementTick
+                0x0000000000000628      0x17c build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0000000000000628                xTaskIncrementTick
  .text.xTaskResumeAll
-                0x00000000000008c8      0x154 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x00000000000008c8                xTaskResumeAll
+                0x00000000000007a4      0x154 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x00000000000007a4                xTaskResumeAll
  .text.vTaskDelay
-                0x0000000000000a1c       0x40 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000a1c                vTaskDelay
+                0x00000000000008f8       0x40 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x00000000000008f8                vTaskDelay
  .text.vTaskSwitchContext
-                0x0000000000000a5c       0x6c build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000a5c                vTaskSwitchContext
+                0x0000000000000938       0x6c build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0000000000000938                vTaskSwitchContext
  .text.vTaskPlaceOnEventList
-                0x0000000000000ac8       0x28 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000ac8                vTaskPlaceOnEventList
- .text.vTaskPlaceOnUnorderedEventList
-                0x0000000000000af0       0x58 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000af0                vTaskPlaceOnUnorderedEventList
+                0x00000000000009a4       0x28 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x00000000000009a4                vTaskPlaceOnEventList
  .text.xTaskRemoveFromEventList
-                0x0000000000000b48       0xc4 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000b48                xTaskRemoveFromEventList
+                0x00000000000009cc       0xc4 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x00000000000009cc                xTaskRemoveFromEventList
  .text.vTaskRemoveFromUnorderedEventList
-                0x0000000000000c0c       0xb0 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000c0c                vTaskRemoveFromUnorderedEventList
+                0x0000000000000a90       0xb0 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0000000000000a90                vTaskRemoveFromUnorderedEventList
  .text.vTaskSetTimeOutState
-                0x0000000000000cbc       0x2c build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000cbc                vTaskSetTimeOutState
+                0x0000000000000b40       0x2c build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0000000000000b40                vTaskSetTimeOutState
  .text.vTaskInternalSetTimeOutState
-                0x0000000000000ce8       0x18 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000ce8                vTaskInternalSetTimeOutState
+                0x0000000000000b6c       0x18 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0000000000000b6c                vTaskInternalSetTimeOutState
  .text.xTaskCheckForTimeOut
-                0x0000000000000d00       0x58 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000d00                xTaskCheckForTimeOut
+                0x0000000000000b84       0x58 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0000000000000b84                xTaskCheckForTimeOut
  .text.vTaskMissedYield
-                0x0000000000000d58        0xc build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000d58                vTaskMissedYield
+                0x0000000000000bdc        0xc build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0000000000000bdc                vTaskMissedYield
  .text.xTaskGetCurrentTaskHandle
-                0x0000000000000d64        0xc build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000d64                xTaskGetCurrentTaskHandle
+                0x0000000000000be8        0xc build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0000000000000be8                xTaskGetCurrentTaskHandle
  .text.xTaskPriorityInherit
-                0x0000000000000d70       0xa4 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000d70                xTaskPriorityInherit
+                0x0000000000000bf4       0xa4 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0000000000000bf4                xTaskPriorityInherit
  .text.xTaskPriorityDisinherit
-                0x0000000000000e14       0x8c build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000e14                xTaskPriorityDisinherit
+                0x0000000000000c98       0x8c build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0000000000000c98                xTaskPriorityDisinherit
  .text.vTaskPriorityDisinheritAfterTimeout
-                0x0000000000000ea0       0xa0 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000ea0                vTaskPriorityDisinheritAfterTimeout
- .text.uxTaskResetEventItemValue
-                0x0000000000000f40       0x18 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000f40                uxTaskResetEventItemValue
+                0x0000000000000d24       0xa0 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0000000000000d24                vTaskPriorityDisinheritAfterTimeout
  .text.pvTaskIncrementMutexHeldCount
-                0x0000000000000f58       0x14 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000f58                pvTaskIncrementMutexHeldCount
+                0x0000000000000dc4       0x14 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0000000000000dc4                pvTaskIncrementMutexHeldCount
  .text.ulTaskGenericNotifyTake
-                0x0000000000000f6c       0xa0 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x0000000000000f6c                ulTaskGenericNotifyTake
+                0x0000000000000dd8       0xa0 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0000000000000dd8                ulTaskGenericNotifyTake
  .text.vTaskGenericNotifyGiveFromISR
-                0x000000000000100c       0xfc build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
-                0x000000000000100c                vTaskGenericNotifyGiveFromISR
+                0x0000000000000e78       0xfc build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+                0x0000000000000e78                vTaskGenericNotifyGiveFromISR
  .text.vListInitialise
-                0x0000000000001108       0x16 build//home/kj/FreeRTOS/FreeRTOS/Source/list.o
-                0x0000000000001108                vListInitialise
+                0x0000000000000f74       0x16 build//home/kj/FreeRTOS/FreeRTOS/Source/list.o
+                0x0000000000000f74                vListInitialise
  .text.vListInitialiseItem
-                0x000000000000111e        0x6 build//home/kj/FreeRTOS/FreeRTOS/Source/list.o
-                0x000000000000111e                vListInitialiseItem
+                0x0000000000000f8a        0x6 build//home/kj/FreeRTOS/FreeRTOS/Source/list.o
+                0x0000000000000f8a                vListInitialiseItem
  .text.vListInsertEnd
-                0x0000000000001124       0x18 build//home/kj/FreeRTOS/FreeRTOS/Source/list.o
-                0x0000000000001124                vListInsertEnd
+                0x0000000000000f90       0x18 build//home/kj/FreeRTOS/FreeRTOS/Source/list.o
+                0x0000000000000f90                vListInsertEnd
  .text.vListInsert
-                0x000000000000113c       0x2e build//home/kj/FreeRTOS/FreeRTOS/Source/list.o
-                0x000000000000113c                vListInsert
+                0x0000000000000fa8       0x2e build//home/kj/FreeRTOS/FreeRTOS/Source/list.o
+                0x0000000000000fa8                vListInsert
  .text.uxListRemove
-                0x000000000000116a       0x1e build//home/kj/FreeRTOS/FreeRTOS/Source/list.o
-                0x000000000000116a                uxListRemove
+                0x0000000000000fd6       0x1e build//home/kj/FreeRTOS/FreeRTOS/Source/list.o
+                0x0000000000000fd6                uxListRemove
  .text.prvIsQueueEmpty
-                0x0000000000001188       0x16 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0000000000000ff4       0x16 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
  .text.prvCopyDataToQueue
-                0x000000000000119e       0x6a build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
+                0x000000000000100a       0x6a build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
  .text.prvCopyDataFromQueue
-                0x0000000000001208       0x28 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0000000000001074       0x28 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
  .text.prvUnlockQueue
-                0x0000000000001230       0x70 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
+                0x000000000000109c       0x70 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
  .text.xQueueGenericReset
-                0x00000000000012a0       0x88 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
-                0x00000000000012a0                xQueueGenericReset
+                0x000000000000110c       0x88 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
+                0x000000000000110c                xQueueGenericReset
  .text.xQueueGenericCreate
-                0x0000000000001328       0x44 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
-                0x0000000000001328                xQueueGenericCreate
+                0x0000000000001194       0x44 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0000000000001194                xQueueGenericCreate
  .text.xQueueCreateCountingSemaphore
-                0x000000000000136c       0x20 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
-                0x000000000000136c                xQueueCreateCountingSemaphore
+                0x00000000000011d8       0x20 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
+                0x00000000000011d8                xQueueCreateCountingSemaphore
  .text.xQueueGenericSend
-                0x000000000000138c      0x122 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
-                0x000000000000138c                xQueueGenericSend
+                0x00000000000011f8      0x122 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
+                0x00000000000011f8                xQueueGenericSend
  .text.xQueueReceive
-                0x00000000000014ae       0xfe build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
-                0x00000000000014ae                xQueueReceive
+                0x000000000000131a       0xfe build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
+                0x000000000000131a                xQueueReceive
  .text.xQueueSemaphoreTake
-                0x00000000000015ac      0x134 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
-                0x00000000000015ac                xQueueSemaphoreTake
+                0x0000000000001418      0x134 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0000000000001418                xQueueSemaphoreTake
  .text.uxQueueMessagesWaiting
-                0x00000000000016e0       0x18 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
-                0x00000000000016e0                uxQueueMessagesWaiting
+                0x000000000000154c       0x18 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
+                0x000000000000154c                uxQueueMessagesWaiting
  .text.vQueueDelete
-                0x00000000000016f8       0x14 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
-                0x00000000000016f8                vQueueDelete
+                0x0000000000001564       0x14 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
+                0x0000000000001564                vQueueDelete
  .text.xEventGroupCreate
-                0x000000000000170c       0x1a build//home/kj/FreeRTOS/FreeRTOS/Source/event_groups.o
-                0x000000000000170c                xEventGroupCreate
- .text.xEventGroupWaitBits
-                0x0000000000001726       0xce build//home/kj/FreeRTOS/FreeRTOS/Source/event_groups.o
-                0x0000000000001726                xEventGroupWaitBits
+                0x0000000000001578       0x1a build//home/kj/FreeRTOS/FreeRTOS/Source/event_groups.o
+                0x0000000000001578                xEventGroupCreate
  .text.xEventGroupClearBits
-                0x00000000000017f4       0x2a build//home/kj/FreeRTOS/FreeRTOS/Source/event_groups.o
-                0x00000000000017f4                xEventGroupClearBits
+                0x0000000000001592       0x2a build//home/kj/FreeRTOS/FreeRTOS/Source/event_groups.o
+                0x0000000000001592                xEventGroupClearBits
  .text.xEventGroupSetBits
-                0x000000000000181e       0x6c build//home/kj/FreeRTOS/FreeRTOS/Source/event_groups.o
-                0x000000000000181e                xEventGroupSetBits
+                0x00000000000015bc       0x6c build//home/kj/FreeRTOS/FreeRTOS/Source/event_groups.o
+                0x00000000000015bc                xEventGroupSetBits
  .text.vEventGroupDelete
-                0x000000000000188a       0x3a build//home/kj/FreeRTOS/FreeRTOS/Source/event_groups.o
-                0x000000000000188a                vEventGroupDelete
+                0x0000000000001628       0x3a build//home/kj/FreeRTOS/FreeRTOS/Source/event_groups.o
+                0x0000000000001628                vEventGroupDelete
+ *fill*         0x0000000000001662        0x2 
  .text.vPortSVCHandler
-                0x00000000000018c4       0x24 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
-                0x00000000000018c4                vPortSVCHandler
+                0x0000000000001664       0x24 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x0000000000001664                vPortSVCHandler
  .text.prvPortStartFirstTask
-                0x00000000000018e8       0x20 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x0000000000001688       0x20 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
  .text.xPortPendSVHandler
-                0x0000000000001908       0x44 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
-                0x0000000000001908                xPortPendSVHandler
+                0x00000000000016a8       0x44 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x00000000000016a8                xPortPendSVHandler
  .text.prvTaskExitError
-                0x000000000000194c       0x34 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x00000000000016ec       0x34 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
  .text.pxPortInitialiseStack
-                0x0000000000001980       0x24 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
-                0x0000000000001980                pxPortInitialiseStack
+                0x0000000000001720       0x24 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x0000000000001720                pxPortInitialiseStack
  .text.vPortEnterCritical
-                0x00000000000019a4       0x34 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
-                0x00000000000019a4                vPortEnterCritical
+                0x0000000000001744       0x34 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x0000000000001744                vPortEnterCritical
  .text.vPortExitCritical
-                0x00000000000019d8       0x20 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
-                0x00000000000019d8                vPortExitCritical
+                0x0000000000001778       0x20 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x0000000000001778                vPortExitCritical
  .text.xPortSysTickHandler
-                0x00000000000019f8       0x2c build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
-                0x00000000000019f8                xPortSysTickHandler
+                0x0000000000001798       0x2c build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x0000000000001798                xPortSysTickHandler
  .text.vPortSetupTimerInterrupt
-                0x0000000000001a24       0x16 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
-                0x0000000000001a24                vPortSetupTimerInterrupt
- *fill*         0x0000000000001a3a        0x2 
+                0x00000000000017c4       0x16 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x00000000000017c4                vPortSetupTimerInterrupt
+ *fill*         0x00000000000017da        0x2 
  .text.xPortStartScheduler
-                0x0000000000001a3c       0xf0 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
-                0x0000000000001a3c                xPortStartScheduler
+                0x00000000000017dc       0xf0 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x00000000000017dc                xPortStartScheduler
  .text.vPortValidateInterruptPriority
-                0x0000000000001b2c       0x44 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
-                0x0000000000001b2c                vPortValidateInterruptPriority
+                0x00000000000018cc       0x44 build//home/kj/FreeRTOS/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x00000000000018cc                vPortValidateInterruptPriority
  .text.pvPortMalloc
-                0x0000000000001b70       0x1e build//home/kj/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_3.o
-                0x0000000000001b70                pvPortMalloc
+                0x0000000000001910       0x1e build//home/kj/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_3.o
+                0x0000000000001910                pvPortMalloc
  .text.vPortFree
-                0x0000000000001b8e       0x1a build//home/kj/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_3.o
-                0x0000000000001b8e                vPortFree
+                0x000000000000192e       0x1a build//home/kj/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_3.o
+                0x000000000000192e                vPortFree
  .text.xIsIPInARPCache
-                0x0000000000001ba8       0x28 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
-                0x0000000000001ba8                xIsIPInARPCache
+                0x0000000000001948       0x28 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
+                0x0000000000001948                xIsIPInARPCache
  .text.vARPRefreshCacheEntryAge
-                0x0000000000001bd0       0x40 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
-                0x0000000000001bd0                vARPRefreshCacheEntryAge
+                0x0000000000001970       0x40 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
+                0x0000000000001970                vARPRefreshCacheEntryAge
  .text.vARPRefreshCacheEntry
-                0x0000000000001c10       0xe8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
-                0x0000000000001c10                vARPRefreshCacheEntry
+                0x00000000000019b0       0xe8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
+                0x00000000000019b0                vARPRefreshCacheEntry
  .text.eARPGetCacheEntry
-                0x0000000000001cf8      0x100 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
-                0x0000000000001cf8                eARPGetCacheEntry
+                0x0000000000001a98      0x100 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
+                0x0000000000001a98                eARPGetCacheEntry
  .text.vARPGenerateRequestPacket
-                0x0000000000001df8       0x64 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
-                0x0000000000001df8                vARPGenerateRequestPacket
+                0x0000000000001b98       0x64 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
+                0x0000000000001b98                vARPGenerateRequestPacket
  .text.FreeRTOS_OutputARPRequest_Multi
-                0x0000000000001e5c       0x60 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
-                0x0000000000001e5c                FreeRTOS_OutputARPRequest_Multi
+                0x0000000000001bfc       0x60 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
+                0x0000000000001bfc                FreeRTOS_OutputARPRequest_Multi
  .text.eARPProcessPacket
-                0x0000000000001ebc      0x1f8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
-                0x0000000000001ebc                eARPProcessPacket
+                0x0000000000001c5c      0x1f8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
+                0x0000000000001c5c                eARPProcessPacket
  .text.xCheckRequiresARPResolution
-                0x00000000000020b4       0x42 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
-                0x00000000000020b4                xCheckRequiresARPResolution
+                0x0000000000001e54       0x42 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
+                0x0000000000001e54                xCheckRequiresARPResolution
  .text.FreeRTOS_OutputARPRequest
-                0x00000000000020f6       0x16 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
-                0x00000000000020f6                FreeRTOS_OutputARPRequest
+                0x0000000000001e96       0x16 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
+                0x0000000000001e96                FreeRTOS_OutputARPRequest
  .text.vARPAgeCache
-                0x000000000000210c       0x74 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
-                0x000000000000210c                vARPAgeCache
+                0x0000000000001eac       0x74 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
+                0x0000000000001eac                vARPAgeCache
  .text.FreeRTOS_ClearARP
-                0x0000000000002180       0x38 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
-                0x0000000000002180                FreeRTOS_ClearARP
+                0x0000000000001f20       0x38 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
+                0x0000000000001f20                FreeRTOS_ClearARP
  .text.pxNew_AddrInfo
-                0x00000000000021b8       0x52 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.o
-                0x00000000000021b8                pxNew_AddrInfo
+                0x0000000000001f58       0x52 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.o
+                0x0000000000001f58                pxNew_AddrInfo
  .text.FreeRTOS_freeaddrinfo
-                0x000000000000220a       0x12 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.o
-                0x000000000000220a                FreeRTOS_freeaddrinfo
+                0x0000000000001faa       0x12 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.o
+                0x0000000000001faa                FreeRTOS_freeaddrinfo
  .text.ulDNSHandlePacket
-                0x000000000000221c       0x3e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.o
-                0x000000000000221c                ulDNSHandlePacket
+                0x0000000000001fbc       0x3e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.o
+                0x0000000000001fbc                ulDNSHandlePacket
  .text.ulNBNSHandlePacket
-                0x000000000000225a       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.o
-                0x000000000000225a                ulNBNSHandlePacket
- *fill*         0x0000000000002272        0x2 
+                0x0000000000001ffa       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS.o
+                0x0000000000001ffa                ulNBNSHandlePacket
+ *fill*         0x0000000000002012        0x2 
  .text.FreeRTOS_dnsclear
-                0x0000000000002274       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.o
-                0x0000000000002274                FreeRTOS_dnsclear
+                0x0000000000002014       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.o
+                0x0000000000002014                FreeRTOS_dnsclear
  .text.FreeRTOS_ProcessDNSCache
-                0x0000000000002290      0x164 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.o
-                0x0000000000002290                FreeRTOS_ProcessDNSCache
+                0x0000000000002030      0x164 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.o
+                0x0000000000002030                FreeRTOS_ProcessDNSCache
  .text.FreeRTOS_dns_update
-                0x00000000000023f4       0x14 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.o
-                0x00000000000023f4                FreeRTOS_dns_update
+                0x0000000000002194       0x14 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Cache.o
+                0x0000000000002194                FreeRTOS_dns_update
  .text.DNS_ReadNameField
-                0x0000000000002408       0x7a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
-                0x0000000000002408                DNS_ReadNameField
+                0x00000000000021a8       0x7a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
+                0x00000000000021a8                DNS_ReadNameField
  .text.DNS_SkipNameField
-                0x0000000000002482       0x42 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
-                0x0000000000002482                DNS_SkipNameField
+                0x0000000000002222       0x42 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
+                0x0000000000002222                DNS_SkipNameField
  .text.parseDNSAnswer
-                0x00000000000024c4      0x200 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
-                0x00000000000024c4                parseDNSAnswer
+                0x0000000000002264      0x200 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
+                0x0000000000002264                parseDNSAnswer
  .text.prepareReplyDNSMessage
-                0x00000000000026c4       0xa8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
-                0x00000000000026c4                prepareReplyDNSMessage
+                0x0000000000002464       0xa8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
+                0x0000000000002464                prepareReplyDNSMessage
  .text.DNS_ParseDNSReply
-                0x000000000000276c      0x254 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
-                0x000000000000276c                DNS_ParseDNSReply
+                0x000000000000250c      0x254 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
+                0x000000000000250c                DNS_ParseDNSReply
  .text.DNS_TreatNBNS
-                0x00000000000029c0      0x174 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
-                0x00000000000029c0                DNS_TreatNBNS
+                0x0000000000002760      0x174 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
+                0x0000000000002760                DNS_TreatNBNS
  .text.ProcessICMPPacket
-                0x0000000000002b34       0x6a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.o
-                0x0000000000002b34                ProcessICMPPacket
- *fill*         0x0000000000002b9e        0x2 
+                0x00000000000028d4       0x6a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ICMP.o
+                0x00000000000028d4                ProcessICMPPacket
+ *fill*         0x000000000000293e        0x2 
  .text.FreeRTOS_GetIPTaskHandle
-                0x0000000000002ba0        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
-                0x0000000000002ba0                FreeRTOS_GetIPTaskHandle
+                0x0000000000002940        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
+                0x0000000000002940                FreeRTOS_GetIPTaskHandle
  .text.vIPNetworkUpCalls
-                0x0000000000002bac       0x2e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
-                0x0000000000002bac                vIPNetworkUpCalls
- *fill*         0x0000000000002bda        0x2 
+                0x000000000000294c       0x2e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
+                0x000000000000294c                vIPNetworkUpCalls
+ *fill*         0x000000000000297a        0x2 
  .text.FreeRTOS_IPInit_Multi
-                0x0000000000002bdc       0x70 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
-                0x0000000000002bdc                FreeRTOS_IPInit_Multi
+                0x000000000000297c       0x70 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
+                0x000000000000297c                FreeRTOS_IPInit_Multi
  .text.FreeRTOS_GetEndPointConfiguration
-                0x0000000000002c4c       0x28 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
-                0x0000000000002c4c                FreeRTOS_GetEndPointConfiguration
+                0x00000000000029ec       0x28 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
+                0x00000000000029ec                FreeRTOS_GetEndPointConfiguration
  .text.xSendEventStructToIPTask
-                0x0000000000002c74       0x54 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
-                0x0000000000002c74                xSendEventStructToIPTask
+                0x0000000000002a14       0x54 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
+                0x0000000000002a14                xSendEventStructToIPTask
  .text.FreeRTOS_NetworkDown
-                0x0000000000002cc8       0x40 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
-                0x0000000000002cc8                FreeRTOS_NetworkDown
+                0x0000000000002a68       0x40 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
+                0x0000000000002a68                FreeRTOS_NetworkDown
  .text.xSendEventToIPTask
-                0x0000000000002d08       0x16 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
-                0x0000000000002d08                xSendEventToIPTask
- *fill*         0x0000000000002d1e        0x2 
+                0x0000000000002aa8       0x16 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
+                0x0000000000002aa8                xSendEventToIPTask
+ *fill*         0x0000000000002abe        0x2 
  .text.vReturnEthernetFrame
-                0x0000000000002d20       0xd8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
-                0x0000000000002d20                vReturnEthernetFrame
+                0x0000000000002ac0       0xd8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
+                0x0000000000002ac0                vReturnEthernetFrame
  .text.xIPIsNetworkTaskReady
-                0x0000000000002df8        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
-                0x0000000000002df8                xIPIsNetworkTaskReady
+                0x0000000000002b98        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
+                0x0000000000002b98                xIPIsNetworkTaskReady
  .text.uxIPHeaderSizePacket
-                0x0000000000002e04       0x12 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
-                0x0000000000002e04                uxIPHeaderSizePacket
- *fill*         0x0000000000002e16        0x2 
+                0x0000000000002ba4       0x12 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
+                0x0000000000002ba4                uxIPHeaderSizePacket
+ *fill*         0x0000000000002bb6        0x2 
  .text.prvIPTask
-                0x0000000000002e18      0x348 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
+                0x0000000000002bb8      0x348 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
  .text.uxIPHeaderSizeSocket
-                0x0000000000003160       0x14 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
-                0x0000000000003160                uxIPHeaderSizeSocket
+                0x0000000000002f00       0x14 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
+                0x0000000000002f00                uxIPHeaderSizeSocket
  .text.prvIPTimerStart
-                0x0000000000003174       0x26 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
+                0x0000000000002f14       0x26 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
  .text.prvIPTimerCheck
-                0x000000000000319a       0x3a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
+                0x0000000000002f3a       0x3a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
  .text.xCalculateSleepTime
-                0x00000000000031d4       0x58 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
-                0x00000000000031d4                xCalculateSleepTime
+                0x0000000000002f74       0x58 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
+                0x0000000000002f74                xCalculateSleepTime
  .text.vCheckNetworkTimers
-                0x000000000000322c       0xc8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
-                0x000000000000322c                vCheckNetworkTimers
+                0x0000000000002fcc       0xc8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
+                0x0000000000002fcc                vCheckNetworkTimers
  .text.vIPTimerStartARPResolution
-                0x00000000000032f4        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
-                0x00000000000032f4                vIPTimerStartARPResolution
+                0x0000000000003094        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
+                0x0000000000003094                vIPTimerStartARPResolution
  .text.vTCPTimerReload
-                0x0000000000003300       0x10 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
-                0x0000000000003300                vTCPTimerReload
+                0x00000000000030a0       0x10 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
+                0x00000000000030a0                vTCPTimerReload
  .text.vARPTimerReload
-                0x0000000000003310       0x10 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
-                0x0000000000003310                vARPTimerReload
+                0x00000000000030b0       0x10 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
+                0x00000000000030b0                vARPTimerReload
  .text.vNetworkTimerReload
-                0x0000000000003320       0x10 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
-                0x0000000000003320                vNetworkTimerReload
+                0x00000000000030c0       0x10 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
+                0x00000000000030c0                vNetworkTimerReload
  .text.vIPSetTCPTimerExpiredState
-                0x0000000000003330       0x20 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
-                0x0000000000003330                vIPSetTCPTimerExpiredState
+                0x00000000000030d0       0x20 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
+                0x00000000000030d0                vIPSetTCPTimerExpiredState
  .text.vIPSetARPTimerEnableState
-                0x0000000000003350       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
-                0x0000000000003350                vIPSetARPTimerEnableState
+                0x00000000000030f0       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
+                0x00000000000030f0                vIPSetARPTimerEnableState
  .text.vIPSetARPResolutionTimerEnableState
-                0x0000000000003368       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
-                0x0000000000003368                vIPSetARPResolutionTimerEnableState
+                0x0000000000003108       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
+                0x0000000000003108                vIPSetARPResolutionTimerEnableState
  .text.vSetAllNetworksUp
-                0x0000000000003380        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
-                0x0000000000003380                vSetAllNetworksUp
+                0x0000000000003120        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Timers.o
+                0x0000000000003120                vSetAllNetworksUp
  .text.prvSetChecksumInPacket
-                0x000000000000338c       0x2c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x000000000000312c       0x2c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
  .text.pxDuplicateNetworkBufferWithDescriptor
-                0x00000000000033b8       0x44 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
-                0x00000000000033b8                pxDuplicateNetworkBufferWithDescriptor
+                0x0000000000003158       0x44 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x0000000000003158                pxDuplicateNetworkBufferWithDescriptor
  .text.pxUDPPayloadBuffer_to_NetworkBuffer
-                0x00000000000033fc       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
-                0x00000000000033fc                pxUDPPayloadBuffer_to_NetworkBuffer
+                0x000000000000319c       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x000000000000319c                pxUDPPayloadBuffer_to_NetworkBuffer
  .text.xIsCallingFromIPTask
-                0x0000000000003420       0x14 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
-                0x0000000000003420                xIsCallingFromIPTask
+                0x00000000000031c0       0x14 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x00000000000031c0                xIsCallingFromIPTask
  .text.prvProcessNetworkDownEvent
-                0x0000000000003434       0xac build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
-                0x0000000000003434                prvProcessNetworkDownEvent
+                0x00000000000031d4       0xac build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x00000000000031d4                prvProcessNetworkDownEvent
  .text.vPreCheckConfigs
-                0x00000000000034e0       0x2c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
-                0x00000000000034e0                vPreCheckConfigs
+                0x0000000000003280       0x2c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x0000000000003280                vPreCheckConfigs
  .text.usGenerateChecksum
-                0x000000000000350c       0xea build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
-                0x000000000000350c                usGenerateChecksum
- *fill*         0x00000000000035f6        0x2 
+                0x00000000000032ac       0xea build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x00000000000032ac                usGenerateChecksum
+ *fill*         0x0000000000003396        0x2 
  .text.usGenerateProtocolChecksum
-                0x00000000000035f8      0x1d8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
-                0x00000000000035f8                usGenerateProtocolChecksum
+                0x0000000000003398      0x1d8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x0000000000003398                usGenerateProtocolChecksum
  .text.FreeRTOS_max_size_t
-                0x00000000000037d0        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
-                0x00000000000037d0                FreeRTOS_max_size_t
+                0x0000000000003570        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x0000000000003570                FreeRTOS_max_size_t
  .text.FreeRTOS_min_int32
-                0x00000000000037d8        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
-                0x00000000000037d8                FreeRTOS_min_int32
+                0x0000000000003578        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x0000000000003578                FreeRTOS_min_int32
  .text.FreeRTOS_min_uint32
-                0x00000000000037e0        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
-                0x00000000000037e0                FreeRTOS_min_uint32
+                0x0000000000003580        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x0000000000003580                FreeRTOS_min_uint32
  .text.FreeRTOS_min_size_t
-                0x00000000000037e8        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
-                0x00000000000037e8                FreeRTOS_min_size_t
+                0x0000000000003588        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x0000000000003588                FreeRTOS_min_size_t
  .text.FreeRTOS_add_int32
-                0x00000000000037f0       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
-                0x00000000000037f0                FreeRTOS_add_int32
+                0x0000000000003590       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x0000000000003590                FreeRTOS_add_int32
  .text.FreeRTOS_multiply_int32
-                0x0000000000003814       0x4c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
-                0x0000000000003814                FreeRTOS_multiply_int32
+                0x00000000000035b4       0x4c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x00000000000035b4                FreeRTOS_multiply_int32
  .text.FreeRTOS_round_up
-                0x0000000000003860       0x1a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
-                0x0000000000003860                FreeRTOS_round_up
+                0x0000000000003600       0x1a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x0000000000003600                FreeRTOS_round_up
  .text.ulChar2u32
-                0x000000000000387a        0x6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
-                0x000000000000387a                ulChar2u32
+                0x000000000000361a        0x6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x000000000000361a                ulChar2u32
  .text.usChar2u16
-                0x0000000000003880        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
-                0x0000000000003880                usChar2u16
+                0x0000000000003620        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x0000000000003620                usChar2u16
  .text.xIsIPv4Multicast
-                0x0000000000003888       0x12 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.o
-                0x0000000000003888                xIsIPv4Multicast
+                0x0000000000003628       0x12 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.o
+                0x0000000000003628                xIsIPv4Multicast
  .text.xIsIPv4Loopback
-                0x000000000000389a       0x12 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.o
-                0x000000000000389a                xIsIPv4Loopback
+                0x000000000000363a       0x12 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.o
+                0x000000000000363a                xIsIPv4Loopback
  .text.xBadIPv4Loopback
-                0x00000000000038ac       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.o
-                0x00000000000038ac                xBadIPv4Loopback
+                0x000000000000364c       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.o
+                0x000000000000364c                xBadIPv4Loopback
  .text.prvAllowIPPacketIPv4
-                0x00000000000038d0      0x180 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.o
-                0x00000000000038d0                prvAllowIPPacketIPv4
+                0x0000000000003670      0x180 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.o
+                0x0000000000003670                prvAllowIPPacketIPv4
  .text.prvCheckIP4HeaderOptions
-                0x0000000000003a50       0x48 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.o
-                0x0000000000003a50                prvCheckIP4HeaderOptions
- .text.FreeRTOS_inet_pton4
-                0x0000000000003a98       0xa4 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.o
-                0x0000000000003a98                FreeRTOS_inet_pton4
+                0x00000000000037f0       0x48 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.o
+                0x00000000000037f0                prvCheckIP4HeaderOptions
  .text.FreeRTOS_inet_ntop4
-                0x0000000000003b3c       0x16 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.o
-                0x0000000000003b3c                FreeRTOS_inet_ntop4
+                0x0000000000003838       0x16 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.o
+                0x0000000000003838                FreeRTOS_inet_ntop4
  .text.vSetMultiCastIPv4MacAddress
-                0x0000000000003b52       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.o
-                0x0000000000003b52                vSetMultiCastIPv4MacAddress
+                0x000000000000384e       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.o
+                0x000000000000384e                vSetMultiCastIPv4MacAddress
  .text.prvChecksumIPv4Checks
-                0x0000000000003b6e       0x6a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.o
-                0x0000000000003b6e                prvChecksumIPv4Checks
+                0x000000000000386a       0x6a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Utils.o
+                0x000000000000386a                prvChecksumIPv4Checks
  .text.FreeRTOS_FillEndPoint
-                0x0000000000003bd8       0xec build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
-                0x0000000000003bd8                FreeRTOS_FillEndPoint
+                0x00000000000038d4       0xec build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
+                0x00000000000038d4                FreeRTOS_FillEndPoint
  .text.FreeRTOS_AddNetworkInterface
-                0x0000000000003cc4       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
-                0x0000000000003cc4                FreeRTOS_AddNetworkInterface
+                0x00000000000039c0       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
+                0x00000000000039c0                FreeRTOS_AddNetworkInterface
  .text.FreeRTOS_FirstNetworkInterface
-                0x0000000000003ce8        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
-                0x0000000000003ce8                FreeRTOS_FirstNetworkInterface
+                0x00000000000039e4        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
+                0x00000000000039e4                FreeRTOS_FirstNetworkInterface
  .text.FreeRTOS_NextNetworkInterface
-                0x0000000000003cf4        0x6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
-                0x0000000000003cf4                FreeRTOS_NextNetworkInterface
- *fill*         0x0000000000003cfa        0x2 
+                0x00000000000039f0        0x6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
+                0x00000000000039f0                FreeRTOS_NextNetworkInterface
+ *fill*         0x00000000000039f6        0x2 
  .text.FreeRTOS_FirstEndPoint
-                0x0000000000003cfc       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
-                0x0000000000003cfc                FreeRTOS_FirstEndPoint
+                0x00000000000039f8       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
+                0x00000000000039f8                FreeRTOS_FirstEndPoint
  .text.FreeRTOS_NextEndPoint
-                0x0000000000003d18       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
-                0x0000000000003d18                FreeRTOS_NextEndPoint
+                0x0000000000003a14       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
+                0x0000000000003a14                FreeRTOS_NextEndPoint
  .text.FreeRTOS_FindEndPointOnIP_IPv4
-                0x0000000000003d34       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
-                0x0000000000003d34                FreeRTOS_FindEndPointOnIP_IPv4
+                0x0000000000003a30       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
+                0x0000000000003a30                FreeRTOS_FindEndPointOnIP_IPv4
  .text.FreeRTOS_InterfaceEndPointOnNetMask
-                0x0000000000003d50       0x2c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
-                0x0000000000003d50                FreeRTOS_InterfaceEndPointOnNetMask
+                0x0000000000003a4c       0x2c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
+                0x0000000000003a4c                FreeRTOS_InterfaceEndPointOnNetMask
  .text.FreeRTOS_FindEndPointOnNetMask
-                0x0000000000003d7c        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
-                0x0000000000003d7c                FreeRTOS_FindEndPointOnNetMask
+                0x0000000000003a78        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
+                0x0000000000003a78                FreeRTOS_FindEndPointOnNetMask
  .text.pxEasyFit
-                0x0000000000003d84       0x9e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
-                0x0000000000003d84                pxEasyFit
+                0x0000000000003a80       0x9e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
+                0x0000000000003a80                pxEasyFit
  .text.FreeRTOS_MatchingEndpoint
-                0x0000000000003e22       0x8e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
-                0x0000000000003e22                FreeRTOS_MatchingEndpoint
+                0x0000000000003b1e       0x8e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
+                0x0000000000003b1e                FreeRTOS_MatchingEndpoint
  .text.FreeRTOS_FindGateWay
-                0x0000000000003eb0       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
-                0x0000000000003eb0                FreeRTOS_FindGateWay
+                0x0000000000003bac       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
+                0x0000000000003bac                FreeRTOS_FindGateWay
  .text.xCheckRequiresResolution
-                0x0000000000003ec8       0x1a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
-                0x0000000000003ec8                xCheckRequiresResolution
- *fill*         0x0000000000003ee2        0x2 
+                0x0000000000003bc4       0x1a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
+                0x0000000000003bc4                xCheckRequiresResolution
+ *fill*         0x0000000000003bde        0x2 
  .text.prvTCPCreateStream
-                0x0000000000003ee4       0xa0 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x0000000000003be0       0xa0 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .text.pxListFindListItemWithValue
-                0x0000000000003f84       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x0000000000003c80       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .text.prvValidSocket
-                0x0000000000003fa8       0x20 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
- .text.prvTCPSendCheck
-                0x0000000000003fc8       0x5e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
- *fill*         0x0000000000004026        0x2 
+                0x0000000000003ca4       0x20 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .text.vNetworkSocketsInit
-                0x0000000000004028       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x0000000000004028                vNetworkSocketsInit
+                0x0000000000003cc4       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x0000000000003cc4                vNetworkSocketsInit
  .text.FreeRTOS_socket
-                0x0000000000004044      0x130 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x0000000000004044                FreeRTOS_socket
- .text.FreeRTOS_bind
-                0x0000000000004174       0x8c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x0000000000004174                FreeRTOS_bind
+                0x0000000000003ce0      0x130 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x0000000000003ce0                FreeRTOS_socket
  .text.vSocketBind
-                0x0000000000004200       0xf0 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x0000000000004200                vSocketBind
- .text.FreeRTOS_closesocket
-                0x00000000000042f0       0x2e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x00000000000042f0                FreeRTOS_closesocket
- *fill*         0x000000000000431e        0x2 
+                0x0000000000003e10       0xf0 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x0000000000003e10                vSocketBind
  .text.vSocketClose
-                0x0000000000004320       0xd8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x0000000000004320                vSocketClose
+                0x0000000000003f00       0xd8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x0000000000003f00                vSocketClose
  .text.pxUDPSocketLookup
-                0x00000000000043f8       0x20 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x00000000000043f8                pxUDPSocketLookup
+                0x0000000000003fd8       0x20 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x0000000000003fd8                pxUDPSocketLookup
  .text.FreeRTOS_inet_ntoa
-                0x0000000000004418       0x8a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x0000000000004418                FreeRTOS_inet_ntoa
+                0x0000000000003ff8       0x8a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x0000000000003ff8                FreeRTOS_inet_ntoa
  .text.FreeRTOS_inet_ntop
-                0x00000000000044a2       0x1a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x00000000000044a2                FreeRTOS_inet_ntop
- .text.FreeRTOS_inet_addr
-                0x00000000000044bc       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x00000000000044bc                FreeRTOS_inet_addr
+                0x0000000000004082       0x1a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x0000000000004082                FreeRTOS_inet_ntop
  .text.FreeRTOS_GetLocalAddress
-                0x00000000000044d4       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x00000000000044d4                FreeRTOS_GetLocalAddress
+                0x000000000000409c       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x000000000000409c                FreeRTOS_GetLocalAddress
  .text.vSocketWakeUpUser
-                0x00000000000044f0       0x38 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x00000000000044f0                vSocketWakeUpUser
- .text.FreeRTOS_send
-                0x0000000000004528      0x108 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x0000000000004528                FreeRTOS_send
+                0x00000000000040b8       0x38 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x00000000000040b8                vSocketWakeUpUser
  .text.FreeRTOS_listen
-                0x0000000000004630       0x7e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x0000000000004630                FreeRTOS_listen
- *fill*         0x00000000000046ae        0x2 
+                0x00000000000040f0       0x7e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x00000000000040f0                FreeRTOS_listen
+ *fill*         0x000000000000416e        0x2 
  .text.xTCPTimerCheck
-                0x00000000000046b0       0x88 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x00000000000046b0                xTCPTimerCheck
+                0x0000000000004170       0x88 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x0000000000004170                xTCPTimerCheck
  .text.pxTCPSocketLookup
-                0x0000000000004738       0x54 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x0000000000004738                pxTCPSocketLookup
+                0x00000000000041f8       0x54 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x00000000000041f8                pxTCPSocketLookup
  .text.lTCPAddRxdata
-                0x000000000000478c       0x80 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x000000000000478c                lTCPAddRxdata
+                0x000000000000424c       0x80 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x000000000000424c                lTCPAddRxdata
  .text.FreeRTOS_tx_space
-                0x000000000000480c       0x20 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x000000000000480c                FreeRTOS_tx_space
- .text.FreeRTOS_tx_size
-                0x000000000000482c       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x000000000000482c                FreeRTOS_tx_size
- .text.FreeRTOS_issocketconnected
-                0x0000000000004844       0x1e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x0000000000004844                FreeRTOS_issocketconnected
- *fill*         0x0000000000004862        0x2 
- .text.prvSockopt_so_buffer
-                0x0000000000004864       0xc4 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
- .text.FreeRTOS_setsockopt
-                0x0000000000004928      0x192 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x0000000000004928                FreeRTOS_setsockopt
- *fill*         0x0000000000004aba        0x2 
- .text.FreeRTOS_connect
-                0x0000000000004abc      0x128 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x0000000000004abc                FreeRTOS_connect
+                0x00000000000042cc       0x20 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x00000000000042cc                FreeRTOS_tx_space
  .text.FreeRTOS_rx_size
-                0x0000000000004be4       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x0000000000004be4                FreeRTOS_rx_size
+                0x00000000000042ec       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x00000000000042ec                FreeRTOS_rx_size
  .text.vTCPNetStat
-                0x0000000000004bfc      0x1b8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x0000000000004bfc                vTCPNetStat
+                0x0000000000004304      0x1b8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x0000000000004304                vTCPNetStat
  .text.vSocketSelect
-                0x0000000000004db4      0x110 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
-                0x0000000000004db4                vSocketSelect
+                0x00000000000044bc      0x110 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x00000000000044bc                vSocketSelect
  .text.uxStreamBufferSpace
-                0x0000000000004ec4       0x10 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
-                0x0000000000004ec4                uxStreamBufferSpace
+                0x00000000000045cc       0x10 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
+                0x00000000000045cc                uxStreamBufferSpace
  .text.uxStreamBufferDistance
-                0x0000000000004ed4        0xe build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
-                0x0000000000004ed4                uxStreamBufferDistance
+                0x00000000000045dc        0xe build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
+                0x00000000000045dc                uxStreamBufferDistance
  .text.uxStreamBufferGetSpace
-                0x0000000000004ee2        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
-                0x0000000000004ee2                uxStreamBufferGetSpace
+                0x00000000000045ea        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
+                0x00000000000045ea                uxStreamBufferGetSpace
  .text.uxStreamBufferFrontSpace
-                0x0000000000004eea        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
-                0x0000000000004eea                uxStreamBufferFrontSpace
+                0x00000000000045f2        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
+                0x00000000000045f2                uxStreamBufferFrontSpace
  .text.uxStreamBufferGetSize
-                0x0000000000004ef2        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
-                0x0000000000004ef2                uxStreamBufferGetSize
+                0x00000000000045fa        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
+                0x00000000000045fa                uxStreamBufferGetSize
  .text.uxStreamBufferMidSpace
-                0x0000000000004efa        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
-                0x0000000000004efa                uxStreamBufferMidSpace
+                0x0000000000004602        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
+                0x0000000000004602                uxStreamBufferMidSpace
  .text.vStreamBufferClear
-                0x0000000000004f02        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
-                0x0000000000004f02                vStreamBufferClear
+                0x000000000000460a        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
+                0x000000000000460a                vStreamBufferClear
  .text.vStreamBufferMoveMid
-                0x0000000000004f0e       0x20 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
-                0x0000000000004f0e                vStreamBufferMoveMid
+                0x0000000000004616       0x20 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
+                0x0000000000004616                vStreamBufferMoveMid
  .text.uxStreamBufferAdd
-                0x0000000000004f2e       0x94 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
-                0x0000000000004f2e                uxStreamBufferAdd
+                0x0000000000004636       0x94 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
+                0x0000000000004636                uxStreamBufferAdd
  .text.uxStreamBufferGet
-                0x0000000000004fc2       0x82 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
-                0x0000000000004fc2                uxStreamBufferGet
+                0x00000000000046ca       0x82 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Stream_Buffer.o
+                0x00000000000046ca                uxStreamBufferGet
  .text.vSocketCloseNextTime
-                0x0000000000005044       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
-                0x0000000000005044                vSocketCloseNextTime
+                0x000000000000474c       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
+                0x000000000000474c                vSocketCloseNextTime
  .text.vSocketListenNextTime
-                0x0000000000005060       0x20 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
-                0x0000000000005060                vSocketListenNextTime
+                0x0000000000004768       0x20 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
+                0x0000000000004768                vSocketListenNextTime
  .text.prvTCPTouchSocket
-                0x0000000000005080       0x28 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
-                0x0000000000005080                prvTCPTouchSocket
+                0x0000000000004788       0x28 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
+                0x0000000000004788                prvTCPTouchSocket
  .text.vTCPStateChange
-                0x00000000000050a8      0x234 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
-                0x00000000000050a8                vTCPStateChange
+                0x00000000000047b0      0x234 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
+                0x00000000000047b0                vTCPStateChange
  .text.prvTCPNextTimeout
-                0x00000000000052dc       0x8a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
-                0x00000000000052dc                prvTCPNextTimeout
+                0x00000000000049e4       0x8a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
+                0x00000000000049e4                prvTCPNextTimeout
  .text.xTCPSocketCheck
-                0x0000000000005366       0x8e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
-                0x0000000000005366                xTCPSocketCheck
+                0x0000000000004a6e       0x8e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
+                0x0000000000004a6e                xTCPSocketCheck
  .text.xProcessReceivedTCPPacket
-                0x00000000000053f4      0x1f6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
-                0x00000000000053f4                xProcessReceivedTCPPacket
- *fill*         0x00000000000055ea        0x2 
+                0x0000000000004afc      0x1f6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
+                0x0000000000004afc                xProcessReceivedTCPPacket
+ *fill*         0x0000000000004cf2        0x2 
  .text.xTCPCheckNewClient
-                0x00000000000055ec       0x3c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
-                0x00000000000055ec                xTCPCheckNewClient
+                0x0000000000004cf4       0x3c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
+                0x0000000000004cf4                xTCPCheckNewClient
  .text.prvCheckOptions
-                0x0000000000005628      0x17c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.o
-                0x0000000000005628                prvCheckOptions
+                0x0000000000004d30      0x17c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.o
+                0x0000000000004d30                prvCheckOptions
  .text.prvCheckRxData
-                0x00000000000057a4       0x78 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.o
-                0x00000000000057a4                prvCheckRxData
+                0x0000000000004eac       0x78 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.o
+                0x0000000000004eac                prvCheckRxData
  .text.prvStoreRxData
-                0x000000000000581c       0x9c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.o
-                0x000000000000581c                prvStoreRxData
+                0x0000000000004f24       0x9c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Reception.o
+                0x0000000000004f24                prvStoreRxData
  .text.prvTCPHandleFin
-                0x00000000000058b8       0xbc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
+                0x0000000000004fc0       0xbc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
  .text.prvTCPSocketIsActive
-                0x0000000000005974       0x1a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
-                0x0000000000005974                prvTCPSocketIsActive
+                0x000000000000507c       0x1a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
+                0x000000000000507c                prvTCPSocketIsActive
  .text.prvTCPStatusAgeCheck
-                0x000000000000598e       0x48 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
-                0x000000000000598e                prvTCPStatusAgeCheck
+                0x0000000000005096       0x48 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
+                0x0000000000005096                prvTCPStatusAgeCheck
  .text.prvTCPHandleState
-                0x00000000000059d6      0x3b6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
-                0x00000000000059d6                prvTCPHandleState
+                0x00000000000050de      0x3b6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
+                0x00000000000050de                prvTCPHandleState
  .text.prvHandleListen
-                0x0000000000005d8c       0x20 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
-                0x0000000000005d8c                prvHandleListen
+                0x0000000000005494       0x20 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
+                0x0000000000005494                prvHandleListen
  .text.prvTCPSocketCopy
-                0x0000000000005dac       0x9a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
-                0x0000000000005dac                prvTCPSocketCopy
- *fill*         0x0000000000005e46        0x2 
+                0x00000000000054b4       0x9a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
+                0x00000000000054b4                prvTCPSocketCopy
+ *fill*         0x000000000000554e        0x2 
  .text.FreeRTOS_GetTCPStateName
-                0x0000000000005e48       0x14 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
-                0x0000000000005e48                FreeRTOS_GetTCPStateName
+                0x0000000000005550       0x14 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
+                0x0000000000005550                FreeRTOS_GetTCPStateName
  .text.prvHandleListen_IPV4
-                0x0000000000005e5c      0x140 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.o
-                0x0000000000005e5c                prvHandleListen_IPV4
+                0x0000000000005564      0x140 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.o
+                0x0000000000005564                prvHandleListen_IPV4
  .text.prvTCPReturnPacket
-                0x0000000000005f9c       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
-                0x0000000000005f9c                prvTCPReturnPacket
+                0x00000000000056a4       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+                0x00000000000056a4                prvTCPReturnPacket
  .text.prvTCPReturn_CheckTCPWindow
-                0x0000000000005fc0       0x70 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
-                0x0000000000005fc0                prvTCPReturn_CheckTCPWindow
+                0x00000000000056c8       0x70 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+                0x00000000000056c8                prvTCPReturn_CheckTCPWindow
  .text.prvTCPReturn_SetSequenceNumber
-                0x0000000000006030       0x5e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
-                0x0000000000006030                prvTCPReturn_SetSequenceNumber
+                0x0000000000005738       0x5e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+                0x0000000000005738                prvTCPReturn_SetSequenceNumber
  .text.prvTCPCreateWindow
-                0x000000000000608e       0x2e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
-                0x000000000000608e                prvTCPCreateWindow
+                0x0000000000005796       0x2e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+                0x0000000000005796                prvTCPCreateWindow
  .text.prvSetSynAckOptions
-                0x00000000000060bc       0x4c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
-                0x00000000000060bc                prvSetSynAckOptions
+                0x00000000000057c4       0x4c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+                0x00000000000057c4                prvSetSynAckOptions
  .text.prvTCPBufferResize
-                0x0000000000006108       0x7c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
-                0x0000000000006108                prvTCPBufferResize
+                0x0000000000005810       0x7c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+                0x0000000000005810                prvTCPBufferResize
  .text.prvTCPReturn_SetEndPoint
-                0x0000000000006184       0xa4 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
-                0x0000000000006184                prvTCPReturn_SetEndPoint
+                0x000000000000588c       0xa4 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+                0x000000000000588c                prvTCPReturn_SetEndPoint
  .text.prvTCPPrepareSend
-                0x0000000000006228      0x1da build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
-                0x0000000000006228                prvTCPPrepareSend
+                0x0000000000005930      0x1da build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+                0x0000000000005930                prvTCPPrepareSend
  .text.prvTCPSendRepeated
-                0x0000000000006402       0x36 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
-                0x0000000000006402                prvTCPSendRepeated
+                0x0000000000005b0a       0x36 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+                0x0000000000005b0a                prvTCPSendRepeated
  .text.prvTCPSendPacket
-                0x0000000000006438       0x90 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
-                0x0000000000006438                prvTCPSendPacket
+                0x0000000000005b40       0x90 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+                0x0000000000005b40                prvTCPSendPacket
  .text.prvTCPAddTxData
-                0x00000000000064c8       0x32 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
-                0x00000000000064c8                prvTCPAddTxData
+                0x0000000000005bd0       0x32 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+                0x0000000000005bd0                prvTCPAddTxData
  .text.prvSetOptions
-                0x00000000000064fa       0x5e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
-                0x00000000000064fa                prvSetOptions
+                0x0000000000005c02       0x5e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+                0x0000000000005c02                prvSetOptions
  .text.prvSendData
-                0x0000000000006558       0xa4 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
-                0x0000000000006558                prvSendData
+                0x0000000000005c60       0xa4 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+                0x0000000000005c60                prvSendData
  .text.prvTCPSendSpecialPacketHelper
-                0x00000000000065fc       0x1e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
-                0x00000000000065fc                prvTCPSendSpecialPacketHelper
+                0x0000000000005d04       0x1e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+                0x0000000000005d04                prvTCPSendSpecialPacketHelper
  .text.prvTCPSendChallengeAck
-                0x000000000000661a        0x6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
-                0x000000000000661a                prvTCPSendChallengeAck
+                0x0000000000005d22        0x6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+                0x0000000000005d22                prvTCPSendChallengeAck
  .text.prvTCPSendReset
-                0x0000000000006620        0x6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
-                0x0000000000006620                prvTCPSendReset
- *fill*         0x0000000000006626        0x2 
+                0x0000000000005d28        0x6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+                0x0000000000005d28                prvTCPSendReset
+ *fill*         0x0000000000005d2e        0x2 
  .text.prvTCPReturnPacket_IPV4
-                0x0000000000006628      0x16c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.o
-                0x0000000000006628                prvTCPReturnPacket_IPV4
+                0x0000000000005d30      0x16c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.o
+                0x0000000000005d30                prvTCPReturnPacket_IPV4
  .text.prvTCPPrepareConnect_IPV4
-                0x0000000000006794       0xde build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.o
-                0x0000000000006794                prvTCPPrepareConnect_IPV4
+                0x0000000000005e9c       0xde build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.o
+                0x0000000000005e9c                prvTCPPrepareConnect_IPV4
  .text.prvTCPSendSpecialPktHelper_IPV4
-                0x0000000000006872       0x34 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.o
-                0x0000000000006872                prvTCPSendSpecialPktHelper_IPV4
+                0x0000000000005f7a       0x34 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission_IPv4.o
+                0x0000000000005f7a                prvTCPSendSpecialPktHelper_IPV4
  .text.prvSocketSetMSS
-                0x00000000000068a6        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.o
-                0x00000000000068a6                prvSocketSetMSS
+                0x0000000000005fae        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils.o
+                0x0000000000005fae                prvSocketSetMSS
  .text.prvSocketSetMSS_IPV4
-                0x00000000000068b2       0x2e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.o
-                0x00000000000068b2                prvSocketSetMSS_IPV4
+                0x0000000000005fba       0x2e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Utils_IPv4.o
+                0x0000000000005fba                prvSocketSetMSS_IPV4
  .text.vListInsertFifo
-                0x00000000000068e0       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+                0x0000000000005fe8       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
  .text.xTCPWindowRxFind
-                0x00000000000068f8       0x1e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
- *fill*         0x0000000000006916        0x2 
+                0x0000000000006000       0x1e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+ *fill*         0x000000000000601e        0x2 
  .text.vTCPWindowFree
-                0x0000000000006918       0x34 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+                0x0000000000006020       0x34 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
  .text.prvTCPWindowTxHasSpace
-                0x000000000000694c       0x3e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+                0x0000000000006054       0x3e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
  .text.prvTCPWindowTxCheckAck
-                0x000000000000698a       0xf8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+                0x0000000000006092       0xf8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
  .text.xSequenceLessThan
-                0x0000000000006a82        0x6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
-                0x0000000000006a82                xSequenceLessThan
+                0x000000000000618a        0x6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+                0x000000000000618a                xSequenceLessThan
  .text.xSequenceGreaterThan
-                0x0000000000006a88        0x6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
-                0x0000000000006a88                xSequenceGreaterThan
+                0x0000000000006190        0x6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+                0x0000000000006190                xSequenceGreaterThan
  .text.xTCPWindowRxEmpty
-                0x0000000000006a8e       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
-                0x0000000000006a8e                xTCPWindowRxEmpty
+                0x0000000000006196       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+                0x0000000000006196                xTCPWindowRxEmpty
  .text.vTCPWindowDestroy
-                0x0000000000006aa6       0x3a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
-                0x0000000000006aa6                vTCPWindowDestroy
+                0x00000000000061ae       0x3a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+                0x00000000000061ae                vTCPWindowDestroy
  .text.vTCPWindowInit
-                0x0000000000006ae0       0x42 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
-                0x0000000000006ae0                vTCPWindowInit
- *fill*         0x0000000000006b22        0x2 
+                0x00000000000061e8       0x42 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+                0x00000000000061e8                vTCPWindowInit
+ *fill*         0x000000000000622a        0x2 
  .text.xTCPWindowCreate
-                0x0000000000006b24       0x9c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
-                0x0000000000006b24                xTCPWindowCreate
+                0x000000000000622c       0x9c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+                0x000000000000622c                xTCPWindowCreate
  .text.lTCPWindowRxCheck
-                0x0000000000006bc0      0x140 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
-                0x0000000000006bc0                lTCPWindowRxCheck
+                0x00000000000062c8      0x140 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+                0x00000000000062c8                lTCPWindowRxCheck
  .text.lTCPWindowTxAdd
-                0x0000000000006d00       0xf4 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
-                0x0000000000006d00                lTCPWindowTxAdd
+                0x0000000000006408       0xf4 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+                0x0000000000006408                lTCPWindowTxAdd
  .text.xTCPWindowTxDone
-                0x0000000000006df4        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
-                0x0000000000006df4                xTCPWindowTxDone
+                0x00000000000064fc        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+                0x00000000000064fc                xTCPWindowTxDone
  .text.xTCPWindowTxHasData
-                0x0000000000006e00       0x60 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
-                0x0000000000006e00                xTCPWindowTxHasData
+                0x0000000000006508       0x60 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+                0x0000000000006508                xTCPWindowTxHasData
  .text.ulTCPWindowTxGet
-                0x0000000000006e60       0xf4 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
-                0x0000000000006e60                ulTCPWindowTxGet
+                0x0000000000006568       0xf4 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+                0x0000000000006568                ulTCPWindowTxGet
  .text.ulTCPWindowTxAck
-                0x0000000000006f54       0x12 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
-                0x0000000000006f54                ulTCPWindowTxAck
+                0x000000000000665c       0x12 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+                0x000000000000665c                ulTCPWindowTxAck
  .text.ulTCPWindowTxSack
-                0x0000000000006f66       0x56 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
-                0x0000000000006f66                ulTCPWindowTxSack
+                0x000000000000666e       0x56 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_WIN.o
+                0x000000000000666e                ulTCPWindowTxSack
  .text.vProcessGeneratedUDPPacket
-                0x0000000000006fbc       0x10 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.o
-                0x0000000000006fbc                vProcessGeneratedUDPPacket
+                0x00000000000066c4       0x10 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.o
+                0x00000000000066c4                vProcessGeneratedUDPPacket
  .text.xProcessReceivedUDPPacket
-                0x0000000000006fcc       0x30 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.o
-                0x0000000000006fcc                xProcessReceivedUDPPacket
+                0x00000000000066d4       0x30 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IP.o
+                0x00000000000066d4                xProcessReceivedUDPPacket
  .text.vProcessGeneratedUDPPacket_IPv4
-                0x0000000000006ffc      0x118 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.o
-                0x0000000000006ffc                vProcessGeneratedUDPPacket_IPv4
+                0x0000000000006704      0x118 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.o
+                0x0000000000006704                vProcessGeneratedUDPPacket_IPv4
  .text.xProcessReceivedUDPPacket_IPv4
-                0x0000000000007114       0xd2 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.o
-                0x0000000000007114                xProcessReceivedUDPPacket_IPv4
- *fill*         0x00000000000071e6        0x2 
+                0x000000000000681c       0xd2 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.o
+                0x000000000000681c                xProcessReceivedUDPPacket_IPv4
+ *fill*         0x00000000000068ee        0x2 
  .text.xNetworkBuffersInitialise
-                0x00000000000071e8       0x70 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
-                0x00000000000071e8                xNetworkBuffersInitialise
+                0x00000000000068f0       0x70 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
+                0x00000000000068f0                xNetworkBuffersInitialise
  .text.pucGetNetworkBuffer
-                0x0000000000007258       0x44 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
-                0x0000000000007258                pucGetNetworkBuffer
+                0x0000000000006960       0x44 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
+                0x0000000000006960                pucGetNetworkBuffer
  .text.vReleaseNetworkBuffer
-                0x000000000000729c        0xa build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
-                0x000000000000729c                vReleaseNetworkBuffer
- *fill*         0x00000000000072a6        0x2 
+                0x00000000000069a4        0xa build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
+                0x00000000000069a4                vReleaseNetworkBuffer
+ *fill*         0x00000000000069ae        0x2 
  .text.vReleaseNetworkBufferAndDescriptor
-                0x00000000000072a8       0x48 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
-                0x00000000000072a8                vReleaseNetworkBufferAndDescriptor
+                0x00000000000069b0       0x48 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
+                0x00000000000069b0                vReleaseNetworkBufferAndDescriptor
  .text.pxGetNetworkBufferWithDescriptor
-                0x00000000000072f0       0xac build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
-                0x00000000000072f0                pxGetNetworkBufferWithDescriptor
+                0x00000000000069f8       0xac build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
+                0x00000000000069f8                pxGetNetworkBufferWithDescriptor
  .text.uxGetNumberOfFreeNetworkBuffers
-                0x000000000000739c        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
-                0x000000000000739c                uxGetNumberOfFreeNetworkBuffers
+                0x0000000000006aa4        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
+                0x0000000000006aa4                uxGetNumberOfFreeNetworkBuffers
  .text.uxGetMinimumFreeNetworkBuffers
-                0x00000000000073a8        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
-                0x00000000000073a8                uxGetMinimumFreeNetworkBuffers
+                0x0000000000006ab0        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
+                0x0000000000006ab0                uxGetMinimumFreeNetworkBuffers
  .text.pxResizeNetworkBufferWithDescriptor
-                0x00000000000073b4       0x46 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
-                0x00000000000073b4                pxResizeNetworkBufferWithDescriptor
- *fill*         0x00000000000073fa        0x2 
+                0x0000000000006abc       0x46 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
+                0x0000000000006abc                pxResizeNetworkBufferWithDescriptor
+ *fill*         0x0000000000006b02        0x2 
  .text.xMPS2_GetPhyLinkStatus
-                0x00000000000073fc       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
+                0x0000000000006b04       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
  .text.xMPS2_NetworkInterfaceOutput
-                0x0000000000007418       0x48 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
+                0x0000000000006b20       0x48 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
  .text.prvWait_ms
-                0x0000000000007460       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
+                0x0000000000006b68       0x1c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
  .text.prvRxTask
-                0x000000000000747c       0xa8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
+                0x0000000000006b84       0xa8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
  .text.xMPS2_NetworkInterfaceInitialise
-                0x0000000000007524      0x170 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
+                0x0000000000006c2c      0x170 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
  .text.EthernetISR
-                0x0000000000007694       0x60 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
-                0x0000000000007694                EthernetISR
+                0x0000000000006d9c       0x60 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
+                0x0000000000006d9c                EthernetISR
  .text.pxMPS2_FillInterfaceDescriptor
-                0x00000000000076f4       0x54 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
-                0x00000000000076f4                pxMPS2_FillInterfaceDescriptor
+                0x0000000000006dfc       0x54 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
+                0x0000000000006dfc                pxMPS2_FillInterfaceDescriptor
  .text.smsc9220_mac_regread
-                0x0000000000007748       0x50 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007748                smsc9220_mac_regread
+                0x0000000000006e50       0x50 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x0000000000006e50                smsc9220_mac_regread
  .text.smsc9220_mac_regwrite
-                0x0000000000007798       0x54 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007798                smsc9220_mac_regwrite
+                0x0000000000006ea0       0x54 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x0000000000006ea0                smsc9220_mac_regwrite
  .text.smsc9220_phy_regread
-                0x00000000000077ec       0x72 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x00000000000077ec                smsc9220_phy_regread
+                0x0000000000006ef4       0x72 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x0000000000006ef4                smsc9220_phy_regread
  .text.smsc9220_phy_regwrite
-                0x000000000000785e       0x78 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x000000000000785e                smsc9220_phy_regwrite
+                0x0000000000006f66       0x78 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x0000000000006f66                smsc9220_phy_regwrite
  .text.smsc9220_soft_reset
-                0x00000000000078d6       0x2e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x00000000000078d6                smsc9220_soft_reset
+                0x0000000000006fde       0x2e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x0000000000006fde                smsc9220_soft_reset
  .text.smsc9220_set_fifo_level_irq
-                0x0000000000007904       0x26 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007904                smsc9220_set_fifo_level_irq
+                0x000000000000700c       0x26 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x000000000000700c                smsc9220_set_fifo_level_irq
  .text.smsc9220_wait_eeprom
-                0x000000000000792a       0x28 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x000000000000792a                smsc9220_wait_eeprom
+                0x0000000000007032       0x28 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x0000000000007032                smsc9220_wait_eeprom
  .text.smsc9220_check_phy
-                0x0000000000007952       0x40 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007952                smsc9220_check_phy
+                0x000000000000705a       0x40 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x000000000000705a                smsc9220_check_phy
  .text.smsc9220_reset_phy
-                0x0000000000007992       0x28 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007992                smsc9220_reset_phy
+                0x000000000000709a       0x28 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x000000000000709a                smsc9220_reset_phy
  .text.smsc9220_advertise_cap
-                0x00000000000079ba       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x00000000000079ba                smsc9220_advertise_cap
+                0x00000000000070c2       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x00000000000070c2                smsc9220_advertise_cap
  .text.smsc9220_enable_xmit
-                0x00000000000079de        0xe build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x00000000000079de                smsc9220_enable_xmit
+                0x00000000000070e6        0xe build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x00000000000070e6                smsc9220_enable_xmit
  .text.smsc9220_enable_mac_xmit
-                0x00000000000079ec       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x00000000000079ec                smsc9220_enable_mac_xmit
+                0x00000000000070f4       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x00000000000070f4                smsc9220_enable_mac_xmit
  .text.smsc9220_enable_mac_recv
-                0x0000000000007a10       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007a10                smsc9220_enable_mac_recv
+                0x0000000000007118       0x24 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x0000000000007118                smsc9220_enable_mac_recv
  .text.smsc9220_check_id
-                0x0000000000007a34       0x12 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007a34                smsc9220_check_id
+                0x000000000000713c       0x12 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x000000000000713c                smsc9220_check_id
  .text.smsc9220_enable_interrupt
-                0x0000000000007a46       0x10 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007a46                smsc9220_enable_interrupt
+                0x000000000000714e       0x10 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x000000000000714e                smsc9220_enable_interrupt
  .text.smsc9220_disable_interrupt
-                0x0000000000007a56       0x12 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007a56                smsc9220_disable_interrupt
+                0x000000000000715e       0x12 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x000000000000715e                smsc9220_disable_interrupt
  .text.smsc9220_disable_all_interrupts
-                0x0000000000007a68        0xa build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007a68                smsc9220_disable_all_interrupts
+                0x0000000000007170        0xa build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x0000000000007170                smsc9220_disable_all_interrupts
  .text.smsc9220_clear_interrupt
-                0x0000000000007a72       0x10 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007a72                smsc9220_clear_interrupt
+                0x000000000000717a       0x10 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x000000000000717a                smsc9220_clear_interrupt
  .text.get_irq_status
-                0x0000000000007a82        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007a82                get_irq_status
+                0x000000000000718a        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x000000000000718a                get_irq_status
  .text.smsc9220_clear_all_interrupts
-                0x0000000000007a8a        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007a8a                smsc9220_clear_all_interrupts
+                0x0000000000007192        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x0000000000007192                smsc9220_clear_all_interrupts
  .text.smsc9220_init_irqs
-                0x0000000000007a96       0x30 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007a96                smsc9220_init_irqs
+                0x000000000000719e       0x30 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x000000000000719e                smsc9220_init_irqs
  .text.smsc9220_establish_link
-                0x0000000000007ac6       0x30 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007ac6                smsc9220_establish_link
+                0x00000000000071ce       0x30 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x00000000000071ce                smsc9220_establish_link
  .text.smsc9220_init
-                0x0000000000007af6      0x124 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007af6                smsc9220_init
+                0x00000000000071fe      0x124 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x00000000000071fe                smsc9220_init
  .text.smsc9220_send_by_chunks
-                0x0000000000007c1a       0xe8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007c1a                smsc9220_send_by_chunks
+                0x0000000000007322       0xe8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x0000000000007322                smsc9220_send_by_chunks
  .text.smsc9220_get_rxfifo_data_used_space
-                0x0000000000007d02        0xa build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007d02                smsc9220_get_rxfifo_data_used_space
+                0x000000000000740a        0xa build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x000000000000740a                smsc9220_get_rxfifo_data_used_space
  .text.smsc9220_receive_by_chunks
-                0x0000000000007d0c       0x56 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007d0c                smsc9220_receive_by_chunks
+                0x0000000000007414       0x56 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x0000000000007414                smsc9220_receive_by_chunks
  .text.smsc9220_peek_next_packet_size
-                0x0000000000007d62       0x2c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
-                0x0000000000007d62                smsc9220_peek_next_packet_size
- *fill*         0x0000000000007d8e        0x2 
- .text          0x0000000000007d90       0x30 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/libgcc.a(_aeabi_uldivmod.o)
-                0x0000000000007d90                __aeabi_uldivmod
- .text          0x0000000000007dc0      0x2d4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/libgcc.a(_udivmoddi4.o)
-                0x0000000000007dc0                __udivmoddi4
- .text          0x0000000000008094        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/libgcc.a(_dvmd_tls.o)
-                0x0000000000008094                __aeabi_ldiv0
-                0x0000000000008094                __aeabi_idiv0
- .text          0x0000000000008098       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-malloc.o)
-                0x0000000000008098                malloc
-                0x00000000000080a8                free
- .text          0x00000000000080b8       0x68 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-memcmp.o)
-                0x00000000000080b8                memcmp
- .text          0x0000000000008120       0xec /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-memcpy.o)
-                0x0000000000008120                memcpy
- .text          0x000000000000820c       0xf8 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-memmove.o)
-                0x000000000000820c                memmove
- .text          0x0000000000008304       0xa4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-memset.o)
-                0x0000000000008304                memset
- .text          0x00000000000083a8       0xcc /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-freer.o)
-                0x00000000000083a8                _free_r
- .text          0x0000000000008474       0xb8 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-mallocr.o)
-                0x0000000000008474                _malloc_r
- .text          0x000000000000852c       0x60 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-printf.o)
-                0x000000000000852c                _printf_r
-                0x000000000000852c                _iprintf_r
-                0x0000000000008558                printf
-                0x0000000000008558                iprintf
- .text          0x000000000000858c       0x24 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-sbrkr.o)
-                0x000000000000858c                _sbrk_r
- .text          0x00000000000085b0      0x100 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-snprintf.o)
-                0x00000000000085b0                _sniprintf_r
-                0x00000000000085b0                _snprintf_r
-                0x000000000000862c                snprintf
-                0x000000000000862c                sniprintf
- .text          0x00000000000086b0      0x1bc /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-strcmp.o)
-                0x00000000000086b0                strcmp
- .text          0x000000000000886c       0x5c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-strlen-stub.o)
-                0x000000000000886c                strlen
- .text          0x00000000000088c8       0x68 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-strncpy.o)
-                0x00000000000088c8                strncpy
- .text          0x0000000000008930       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-time.o)
-                0x0000000000008930                time
- .text          0x0000000000008964       0x50 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-vprintf.o)
-                0x0000000000008964                vprintf
-                0x0000000000008964                viprintf
-                0x0000000000008990                _viprintf_r
-                0x0000000000008990                _vprintf_r
- .text          0x00000000000089b4       0xc4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-wbuf.o)
-                0x00000000000089b4                __swbuf_r
-                0x0000000000008a64                __swbuf
- .text          0x0000000000008a78      0x104 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-wsetup.o)
-                0x0000000000008a78                __swsetup_r
- .text          0x0000000000008b7c      0x1dc /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-fflush.o)
-                0x0000000000008b7c                __sflush_r
-                0x0000000000008c84                _fflush_r
-                0x0000000000008cd8                fflush
- .text          0x0000000000008d58      0x230 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-findfp.o)
-                0x0000000000008d5c                _cleanup_r
-                0x0000000000008d6c                __sfmoreglue
-                0x0000000000008d9c                __sfp
-                0x0000000000008f34                _cleanup
-                0x0000000000008f48                __sinit
-                0x0000000000008f50                __sfp_lock_acquire
-                0x0000000000008f54                __sfp_lock_release
-                0x0000000000008f58                __sinit_lock_acquire
-                0x0000000000008f5c                __sinit_lock_release
-                0x0000000000008f60                __fp_lock_all
-                0x0000000000008f74                __fp_unlock_all
- .text          0x0000000000008f88       0x88 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-fwalk.o)
-                0x0000000000008f88                _fwalk
-                0x0000000000008fc8                _fwalk_reent
- .text          0x0000000000009010       0x28 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-gettimeofdayr.o)
-                0x0000000000009010                _gettimeofday_r
- .text          0x0000000000009038      0x11c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-makebuf.o)
-                0x0000000000009038                __smakebuf_r
-                0x00000000000090f8                __swhatbuf_r
- .text          0x0000000000009154        0x8 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-mlock.o)
-                0x0000000000009154                __malloc_lock
-                0x0000000000009158                __malloc_unlock
- .text          0x000000000000915c      0x3f4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-svfprintf.o)
-                0x000000000000915c                __ssputs_r
-                0x0000000000009220                __ssprint_r
-                0x000000000000931c                _svfprintf_r
-                0x000000000000931c                _svfiprintf_r
- .text          0x0000000000009550      0x320 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-vfprintf.o)
-                0x0000000000009578                __sfputs_r
-                0x00000000000095a8                __sprint_r
-                0x00000000000095c4                _vfiprintf_r
-                0x00000000000095c4                _vfprintf_r
-                0x0000000000009854                vfiprintf
-                0x0000000000009854                vfprintf
- .text          0x0000000000009870      0x3d8 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0000000000009870                _printf_common
-                0x000000000000999c                _printf_i
- .text          0x0000000000009c48       0x90 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-stdio.o)
-                0x0000000000009c48                __sread
-                0x0000000000009c6c                __seofread
-                0x0000000000009c70                __swrite
-                0x0000000000009cb0                __sseek
-                0x0000000000009cd0                __sclose
- .text          0x0000000000009cd8       0x2c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-writer.o)
-                0x0000000000009cd8                _write_r
- .text          0x0000000000009d04       0x24 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-closer.o)
-                0x0000000000009d04                _close_r
- .text          0x0000000000009d28       0x28 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-fstatr.o)
-                0x0000000000009d28                _fstat_r
- .text          0x0000000000009d50      0x2f0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-fvwrite.o)
-                0x0000000000009d50                __sfvwrite_r
- .text          0x000000000000a040       0x24 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-isattyr.o)
-                0x000000000000a040                _isatty_r
- .text          0x000000000000a064       0x2c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-lseekr.o)
-                0x000000000000a064                _lseek_r
- .text          0x000000000000a090       0x90 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-memchr-stub.o)
-                0x000000000000a090                memchr
- .text          0x000000000000a120       0x50 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-reallocr.o)
-                0x000000000000a120                _realloc_r
- .text          0x000000000000a170       0x2c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-readr.o)
-                0x000000000000a170                _read_r
- .text          0x000000000000a19c       0x14 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-msizer.o)
-                0x000000000000a19c                _malloc_usable_size_r
- .text          0x000000000000a1b0      0xa10 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/librdimon_nano.a(rdimon-syscalls.o)
-                0x000000000000a1b0                _swiread
-                0x000000000000a27c                _swilseek
-                0x000000000000a360                _lseek
-                0x000000000000a364                _swiwrite
-                0x000000000000a45c                _swiclose
-                0x000000000000a494                _close
-                0x000000000000a52c                _getpid
-                0x000000000000a584                _swistat
-                0x000000000000a620                _stat
-                0x000000000000a65c                _swiopen
-                0x000000000000a728                _open
-                0x000000000000a73c                _get_semihosting_exts
-                0x000000000000a84c                _has_ext_exit_extended
-                0x000000000000a88c                _has_ext_stdout_stderr
-                0x000000000000a8cc                initialise_monitor_handles
-                0x000000000000a9f8                _link
-                0x000000000000aa0c                _unlink
-                0x000000000000aa4c                _gettimeofday
-                0x000000000000aa74                _clock
-                0x000000000000aa88                _times
-                0x000000000000aaa8                _isatty
-                0x000000000000ab10                _system
-                0x000000000000ab6c                _rename
- .text          0x000000000000abc0        0xc /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-errno.o)
-                0x000000000000abc0                __errno
+                0x000000000000746a       0x2c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/ether_lan9118/smsc9220_eth_drv.o
+                0x000000000000746a                smsc9220_peek_next_packet_size
+ *fill*         0x0000000000007496        0x2 
+ .text          0x0000000000007498       0x30 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/libgcc.a(_aeabi_uldivmod.o)
+                0x0000000000007498                __aeabi_uldivmod
+ .text          0x00000000000074c8      0x2d4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/libgcc.a(_udivmoddi4.o)
+                0x00000000000074c8                __udivmoddi4
+ .text          0x000000000000779c        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x000000000000779c                __aeabi_ldiv0
+                0x000000000000779c                __aeabi_idiv0
+ .text          0x00000000000077a0       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-malloc.o)
+                0x00000000000077a0                malloc
+                0x00000000000077b0                free
+ .text          0x00000000000077c0       0x68 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-memcmp.o)
+                0x00000000000077c0                memcmp
+ .text          0x0000000000007828       0xec /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-memcpy.o)
+                0x0000000000007828                memcpy
+ .text          0x0000000000007914       0xf8 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-memmove.o)
+                0x0000000000007914                memmove
+ .text          0x0000000000007a0c       0xa4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-memset.o)
+                0x0000000000007a0c                memset
+ .text          0x0000000000007ab0       0xcc /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-freer.o)
+                0x0000000000007ab0                _free_r
+ .text          0x0000000000007b7c       0xb8 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-mallocr.o)
+                0x0000000000007b7c                _malloc_r
+ .text          0x0000000000007c34       0x60 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-printf.o)
+                0x0000000000007c34                _printf_r
+                0x0000000000007c34                _iprintf_r
+                0x0000000000007c60                printf
+                0x0000000000007c60                iprintf
+ .text          0x0000000000007c94       0x24 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-sbrkr.o)
+                0x0000000000007c94                _sbrk_r
+ .text          0x0000000000007cb8      0x100 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-snprintf.o)
+                0x0000000000007cb8                _sniprintf_r
+                0x0000000000007cb8                _snprintf_r
+                0x0000000000007d34                snprintf
+                0x0000000000007d34                sniprintf
+ .text          0x0000000000007db8      0x1bc /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-strcmp.o)
+                0x0000000000007db8                strcmp
+ .text          0x0000000000007f74       0x5c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-strlen-stub.o)
+                0x0000000000007f74                strlen
+ .text          0x0000000000007fd0       0x68 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-strncpy.o)
+                0x0000000000007fd0                strncpy
+ .text          0x0000000000008038       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-time.o)
+                0x0000000000008038                time
+ .text          0x000000000000806c       0x50 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-vprintf.o)
+                0x000000000000806c                vprintf
+                0x000000000000806c                viprintf
+                0x0000000000008098                _viprintf_r
+                0x0000000000008098                _vprintf_r
+ .text          0x00000000000080bc       0xc4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-wbuf.o)
+                0x00000000000080bc                __swbuf_r
+                0x000000000000816c                __swbuf
+ .text          0x0000000000008180      0x104 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-wsetup.o)
+                0x0000000000008180                __swsetup_r
+ .text          0x0000000000008284      0x1dc /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-fflush.o)
+                0x0000000000008284                __sflush_r
+                0x000000000000838c                _fflush_r
+                0x00000000000083e0                fflush
+ .text          0x0000000000008460      0x230 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-findfp.o)
+                0x0000000000008464                _cleanup_r
+                0x0000000000008474                __sfmoreglue
+                0x00000000000084a4                __sfp
+                0x000000000000863c                _cleanup
+                0x0000000000008650                __sinit
+                0x0000000000008658                __sfp_lock_acquire
+                0x000000000000865c                __sfp_lock_release
+                0x0000000000008660                __sinit_lock_acquire
+                0x0000000000008664                __sinit_lock_release
+                0x0000000000008668                __fp_lock_all
+                0x000000000000867c                __fp_unlock_all
+ .text          0x0000000000008690       0x88 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-fwalk.o)
+                0x0000000000008690                _fwalk
+                0x00000000000086d0                _fwalk_reent
+ .text          0x0000000000008718       0x28 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-gettimeofdayr.o)
+                0x0000000000008718                _gettimeofday_r
+ .text          0x0000000000008740      0x11c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-makebuf.o)
+                0x0000000000008740                __smakebuf_r
+                0x0000000000008800                __swhatbuf_r
+ .text          0x000000000000885c        0x8 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-mlock.o)
+                0x000000000000885c                __malloc_lock
+                0x0000000000008860                __malloc_unlock
+ .text          0x0000000000008864      0x3f4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x0000000000008864                __ssputs_r
+                0x0000000000008928                __ssprint_r
+                0x0000000000008a24                _svfprintf_r
+                0x0000000000008a24                _svfiprintf_r
+ .text          0x0000000000008c58      0x320 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x0000000000008c80                __sfputs_r
+                0x0000000000008cb0                __sprint_r
+                0x0000000000008ccc                _vfiprintf_r
+                0x0000000000008ccc                _vfprintf_r
+                0x0000000000008f5c                vfiprintf
+                0x0000000000008f5c                vfprintf
+ .text          0x0000000000008f78      0x3d8 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000000008f78                _printf_common
+                0x00000000000090a4                _printf_i
+ .text          0x0000000000009350       0x90 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-stdio.o)
+                0x0000000000009350                __sread
+                0x0000000000009374                __seofread
+                0x0000000000009378                __swrite
+                0x00000000000093b8                __sseek
+                0x00000000000093d8                __sclose
+ .text          0x00000000000093e0       0x2c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-writer.o)
+                0x00000000000093e0                _write_r
+ .text          0x000000000000940c       0x24 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-closer.o)
+                0x000000000000940c                _close_r
+ .text          0x0000000000009430       0x28 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-fstatr.o)
+                0x0000000000009430                _fstat_r
+ .text          0x0000000000009458      0x2f0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-fvwrite.o)
+                0x0000000000009458                __sfvwrite_r
+ .text          0x0000000000009748       0x24 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-isattyr.o)
+                0x0000000000009748                _isatty_r
+ .text          0x000000000000976c       0x2c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-lseekr.o)
+                0x000000000000976c                _lseek_r
+ .text          0x0000000000009798       0x90 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-memchr-stub.o)
+                0x0000000000009798                memchr
+ .text          0x0000000000009828       0x50 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-reallocr.o)
+                0x0000000000009828                _realloc_r
+ .text          0x0000000000009878       0x2c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-readr.o)
+                0x0000000000009878                _read_r
+ .text          0x00000000000098a4       0x14 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-msizer.o)
+                0x00000000000098a4                _malloc_usable_size_r
+ .text          0x00000000000098b8      0xa10 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/librdimon_nano.a(rdimon-syscalls.o)
+                0x00000000000098b8                _swiread
+                0x0000000000009984                _swilseek
+                0x0000000000009a68                _lseek
+                0x0000000000009a6c                _swiwrite
+                0x0000000000009b64                _swiclose
+                0x0000000000009b9c                _close
+                0x0000000000009c34                _getpid
+                0x0000000000009c8c                _swistat
+                0x0000000000009d28                _stat
+                0x0000000000009d64                _swiopen
+                0x0000000000009e30                _open
+                0x0000000000009e44                _get_semihosting_exts
+                0x0000000000009f54                _has_ext_exit_extended
+                0x0000000000009f94                _has_ext_stdout_stderr
+                0x0000000000009fd4                initialise_monitor_handles
+                0x000000000000a100                _link
+                0x000000000000a114                _unlink
+                0x000000000000a154                _gettimeofday
+                0x000000000000a17c                _clock
+                0x000000000000a190                _times
+                0x000000000000a1b0                _isatty
+                0x000000000000a218                _system
+                0x000000000000a274                _rename
+ .text          0x000000000000a2c8        0xc /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-errno.o)
+                0x000000000000a2c8                __errno
  *(.init)
  *(.fini)
  *(.eh_frame)
  *(.rodata*)
  .rodata.vApplicationIPNetworkEventHook_Multi.str1.1
-                0x000000000000abcc       0x38 build/main_networking.o
+                0x000000000000a2d4       0x38 build/main_networking.o
  .rodata.__FUNCTION__.0
-                0x000000000000ac04       0x25 build/main_networking.o
+                0x000000000000a30c       0x25 build/main_networking.o
  .rodata.ucDNSServerAddress
-                0x000000000000ac29        0x4 build/main_networking.o
+                0x000000000000a331        0x4 build/main_networking.o
  .rodata.ucGatewayAddress
-                0x000000000000ac2d        0x4 build/main_networking.o
+                0x000000000000a335        0x4 build/main_networking.o
  .rodata.ucIPAddress
-                0x000000000000ac31        0x4 build/main_networking.o
+                0x000000000000a339        0x4 build/main_networking.o
  .rodata.ucMACAddress
-                0x000000000000ac35        0x6 build/main_networking.o
-                0x000000000000ac35                ucMACAddress
+                0x000000000000a33d        0x6 build/main_networking.o
+                0x000000000000a33d                ucMACAddress
  .rodata.ucNetMask
-                0x000000000000ac3b        0x4 build/main_networking.o
- .rodata.prvTCPHeartbeatTask.str1.1
-                0x000000000000ac3f       0x78 build/tcp_heartbeat_demo.o
-                                         0x84 (size before relaxing)
- .rodata.vStartTCPHeartbeatDemo.str1.1
-                0x000000000000acb7        0x7 build/tcp_heartbeat_demo.o
+                0x000000000000a343        0x4 build/main_networking.o
+ .rodata.vStartEchoDemo.str1.1
+                0x000000000000a347       0x21 build/demo_echo.o
+                                         0x2d (size before relaxing)
  .rodata.__FUNCTION__.0
-                0x000000000000acbe       0x14 build/tcp_heartbeat_demo.o
+                0x000000000000a368        0xf build/demo_echo.o
  .rodata.vTaskStartScheduler.str1.1
-                0x000000000000acd2        0x5 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
- .rodata        0x000000000000acd7       0x2c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
+                0x000000000000a377        0x5 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
+ .rodata        0x000000000000a37c       0x2c build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_ARP.o
  .rodata.parseDNSAnswer.str1.1
-                0x000000000000ad03       0x5f build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
+                0x000000000000a3a8       0x5f build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
                                          0x6c (size before relaxing)
  .rodata.DNS_ParseDNSReply.str1.1
-                0x000000000000ad62       0x34 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
+                0x000000000000a407       0x34 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
  .rodata.__FUNCTION__.0
-                0x000000000000ad96        0xf build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
+                0x000000000000a43b        0xf build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
  .rodata.__FUNCTION__.1
-                0x000000000000ada5       0x12 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
+                0x000000000000a44a       0x12 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_DNS_Parser.o
  .rodata.FreeRTOS_IPInit_Multi.str1.1
-                0x000000000000adb7        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
+                0x000000000000a45c        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
  .rodata.vReturnEthernetFrame.str1.1
-                0x000000000000adbf       0x34 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
+                0x000000000000a464       0x34 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
                                          0x40 (size before relaxing)
  .rodata.__FUNCTION__.0
-                0x000000000000adf3       0x15 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
+                0x000000000000a498       0x15 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
  .rodata.xBroadcastMACAddress
-                0x000000000000ae08        0x6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
-                0x000000000000ae08                xBroadcastMACAddress
+                0x000000000000a4ad        0x6 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP.o
+                0x000000000000a4ad                xBroadcastMACAddress
  .rodata.usGenerateProtocolChecksum.str1.1
-                0x000000000000ae0e       0x1e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x000000000000a4b3       0x1e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
                                          0x2a (size before relaxing)
  .rodata.__FUNCTION__.1
-                0x000000000000ae2c       0x1b build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
+                0x000000000000a4d1       0x1b build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IP_Utils.o
  .rodata.prvAllowIPPacketIPv4.str1.1
-                0x000000000000ae47       0x60 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.o
+                0x000000000000a4ec       0x60 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.o
                                          0x6c (size before relaxing)
  .rodata.__FUNCTION__.0
-                0x000000000000aea7       0x15 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.o
+                0x000000000000a54c       0x15 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.o
  .rodata.__FUNCTION__.1
-                0x000000000000aebc       0x15 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.o
- .rodata.FreeRTOS_inet_pton4.str1.1
-                0x000000000000aed1       0x37 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.o
-                                         0x43 (size before relaxing)
- .rodata.__FUNCTION__.0
-                0x000000000000af08       0x14 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4_Sockets.o
+                0x000000000000a561       0x15 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_IPv4.o
  .rodata.FreeRTOS_FillEndPoint.str1.1
-                0x000000000000af1c       0x6e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
+                0x000000000000a576       0x6e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
                                          0x7a (size before relaxing)
  .rodata.__FUNCTION__.0
-                0x000000000000af8a       0x15 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
+                0x000000000000a5e4       0x15 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
  .rodata.__FUNCTION__.1
-                0x000000000000af9f       0x16 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
+                0x000000000000a5f9       0x16 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Routing.o
  .rodata.FreeRTOS_DeleteSocketSet.str1.1
-                0x000000000000afb5       0x3b build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x000000000000a60f       0x3b build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
                                          0x47 (size before relaxing)
- .rodata.prvSockopt_so_buffer.str1.1
-                0x000000000000aff0       0x9a build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
- .rodata.FreeRTOS_connect.str1.1
-                0x000000000000b08a       0x21 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .rodata.vTCPNetStat.str1.1
-                0x000000000000b0ab       0xde build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x000000000000a64a       0xde build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .rodata.__FUNCTION__.0
-                0x000000000000b189       0x16 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x000000000000a728       0x16 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .rodata.__FUNCTION__.1
-                0x000000000000b19f        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
- .rodata.__FUNCTION__.5
-                0x000000000000b1ab       0x13 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
- .rodata.__FUNCTION__.6
-                0x000000000000b1be       0x15 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
- *fill*         0x000000000000b1d3        0x1 
+                0x000000000000a73e        0xc build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+ *fill*         0x000000000000a74a        0x2 
  .rodata.xPercTable.3
-                0x000000000000b1d4       0x20 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
+                0x000000000000a74c       0x20 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_Sockets.o
  .rodata.vTCPStateChange.str1.1
-                0x000000000000b1f4       0x90 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
+                0x000000000000a76c       0x90 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
                                          0x9c (size before relaxing)
  .rodata.__FUNCTION__.0
-                0x000000000000b284       0x10 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
+                0x000000000000a7fc       0x10 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_IP.o
  .rodata.str1.1
-                0x000000000000b294       0x92 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
- *fill*         0x000000000000b326        0x2 
+                0x000000000000a80c       0x92 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
+ *fill*         0x000000000000a89e        0x2 
  .rodata.pcStateNames.0
-                0x000000000000b328       0x34 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
+                0x000000000000a8a0       0x34 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling.o
  .rodata.prvHandleListen_IPV4.str1.1
-                0x000000000000b35c       0x32 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.o
+                0x000000000000a8d4       0x32 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.o
                                          0x3f (size before relaxing)
  .rodata.__FUNCTION__.0
-                0x000000000000b38e       0x15 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.o
+                0x000000000000a906       0x15 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_State_Handling_IPv4.o
  .rodata.prvTCPReturn_SetEndPoint.str1.1
-                0x000000000000b3a3       0x8e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+                0x000000000000a91b       0x8e build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
                                          0x9a (size before relaxing)
  .rodata.__FUNCTION__.0
-                0x000000000000b431       0x19 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
- .rodata        0x000000000000b44a       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.o
- *fill*         0x000000000000b462        0x2 
+                0x000000000000a9a9       0x19 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_TCP_Transmission.o
+ .rodata        0x000000000000a9c2       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/FreeRTOS_UDP_IPv4.o
+ *fill*         0x000000000000a9da        0x2 
  .rodata.xBufferAllocFixedSize
-                0x000000000000b464        0x4 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
-                0x000000000000b464                xBufferAllocFixedSize
+                0x000000000000a9dc        0x4 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/BufferManagement/BufferAllocation_2.o
+                0x000000000000a9dc                xBufferAllocFixedSize
  .rodata.prvRxTask.str1.1
-                0x000000000000b468       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
+                0x000000000000a9e0       0x18 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
                                          0x24 (size before relaxing)
  .rodata.xMPS2_NetworkInterfaceInitialise.str1.1
-                0x000000000000b480        0x5 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
+                0x000000000000a9f8        0x5 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
  .rodata.pxMPS2_FillInterfaceDescriptor.str1.1
-                0x000000000000b485        0x7 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
+                0x000000000000a9fd        0x7 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
  .rodata.SMSC9220_ETH_DEV
-                0x000000000000b48c        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
+                0x000000000000aa04        0x8 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
  .rodata.SMSC9220_ETH_DEV_CFG
-                0x000000000000b494        0x4 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
+                0x000000000000aa0c        0x4 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
  .rodata.__FUNCTION__.0
-                0x000000000000b498       0x11 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
- *fill*         0x000000000000b4a9        0x3 
- .rodata        0x000000000000b4ac       0x60 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-findfp.o)
-                0x000000000000b4ac                __sf_fake_stderr
-                0x000000000000b4cc                __sf_fake_stdout
-                0x000000000000b4ec                __sf_fake_stdin
- .rodata        0x000000000000b50c        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-impure.o)
-                0x000000000000b50c                _global_impure_ptr
+                0x000000000000aa10       0x11 build//home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/MPS2_AN385/NetworkInterface.o
+ *fill*         0x000000000000aa21        0x3 
+ .rodata        0x000000000000aa24       0x60 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-findfp.o)
+                0x000000000000aa24                __sf_fake_stderr
+                0x000000000000aa44                __sf_fake_stdout
+                0x000000000000aa64                __sf_fake_stdin
+ .rodata        0x000000000000aa84        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-impure.o)
+                0x000000000000aa84                _global_impure_ptr
  .rodata.str1.4
-                0x000000000000b510       0x13 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x000000000000aa88       0x13 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-svfprintf.o)
  .rodata.str1.4
-                0x000000000000b523       0x13 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-vfprintf.o)
- *fill*         0x000000000000b523        0x1 
+                0x000000000000aa9b       0x13 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-vfprintf.o)
+ *fill*         0x000000000000aa9b        0x1 
  .rodata.str1.4
-                0x000000000000b524       0x25 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-vfprintf_i.o)
- *fill*         0x000000000000b549        0x3 
+                0x000000000000aa9c       0x25 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ *fill*         0x000000000000aac1        0x3 
  .rodata.str1.4
-                0x000000000000b54c       0x1c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/librdimon_nano.a(rdimon-syscalls.o)
-                0x000000000000b568                . = ALIGN (0x4)
-                0x000000000000b568                _etext = .
+                0x000000000000aac4       0x1c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/librdimon_nano.a(rdimon-syscalls.o)
+                0x000000000000aae0                . = ALIGN (0x4)
+                0x000000000000aae0                _etext = .
 
-.glue_7         0x000000000000b568        0x0
- .glue_7        0x000000000000b568        0x0 linker stubs
+.glue_7         0x000000000000aae0        0x0
+ .glue_7        0x000000000000aae0        0x0 linker stubs
 
-.glue_7t        0x000000000000b568        0x0
- .glue_7t       0x000000000000b568        0x0 linker stubs
+.glue_7t        0x000000000000aae0        0x0
+ .glue_7t       0x000000000000aae0        0x0 linker stubs
 
-.vfp11_veneer   0x000000000000b568        0x0
- .vfp11_veneer  0x000000000000b568        0x0 linker stubs
+.vfp11_veneer   0x000000000000aae0        0x0
+ .vfp11_veneer  0x000000000000aae0        0x0 linker stubs
 
-.v4_bx          0x000000000000b568        0x0
- .v4_bx         0x000000000000b568        0x0 linker stubs
+.v4_bx          0x000000000000aae0        0x0
+ .v4_bx         0x000000000000aae0        0x0 linker stubs
 
-.iplt           0x000000000000b568        0x0
- .iplt          0x000000000000b568        0x0 build/startup.o
+.iplt           0x000000000000aae0        0x0
+ .iplt          0x000000000000aae0        0x0 build/startup.o
 
-.ARM.extab      0x000000000000b568        0x0
-                0x000000000000b568                . = ALIGN (0x4)
+.ARM.extab      0x000000000000aae0        0x0
+                0x000000000000aae0                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000000000000b568                . = ALIGN (0x4)
+                0x000000000000aae0                . = ALIGN (0x4)
 
-.ARM            0x000000000000b568        0x8
-                0x000000000000b568                . = ALIGN (0x4)
-                0x000000000000b568                __exidx_start = .
+.ARM            0x000000000000aae0        0x8
+                0x000000000000aae0                . = ALIGN (0x4)
+                0x000000000000aae0                __exidx_start = .
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x000000000000b568        0x8 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/libgcc.a(_udivmoddi4.o)
-                0x000000000000b570                __exidx_end = .
-                0x000000000000b570                . = ALIGN (0x4)
+ .ARM.exidx     0x000000000000aae0        0x8 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/libgcc.a(_udivmoddi4.o)
+                0x000000000000aae8                __exidx_end = .
+                0x000000000000aae8                . = ALIGN (0x4)
 
-.rel.dyn        0x000000000000b570        0x0
- .rel.iplt      0x000000000000b570        0x0 build/startup.o
+.rel.dyn        0x000000000000aae8        0x0
+ .rel.iplt      0x000000000000aae8        0x0 build/startup.o
 
 .interrupts_ram
                 0x0000000020000000      0x100
@@ -2278,9 +2252,9 @@ END GROUP
  *fill*         0x0000000020000000      0x100 
                 0x0000000020000100                . = ALIGN (0x4)
                 0x0000000020000100                __interrupts_ram_end = .
-                0x000000000000b570                _sidata = LOADADDR (.data)
+                0x000000000000aae8                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000100       0x80 load address 0x000000000000b570
+.data           0x0000000020000100       0x80 load address 0x000000000000aae8
                 0x0000000020000100                . = ALIGN (0x4)
                 0x0000000020000100                _sdata = .
  *(.data*)
@@ -2299,10 +2273,10 @@ END GROUP
                 0x0000000020000180                . = ALIGN (0x4)
                 0x0000000020000180                _edata = .
 
-.igot.plt       0x0000000020000180        0x0 load address 0x000000000000b5f0
+.igot.plt       0x0000000020000180        0x0 load address 0x000000000000ab68
  .igot.plt      0x0000000020000180        0x0 build/startup.o
 
-.uninitialized  0x0000000020000180        0x0 load address 0x000000000000b5f0
+.uninitialized  0x0000000020000180        0x0 load address 0x000000000000ab68
                 0x0000000020000180                . = ALIGN (0x20)
                 0x0000000020000180                __uninitialized_start = .
  *(.uninitialized)
@@ -2310,7 +2284,7 @@ END GROUP
                 0x0000000020000180                . = ALIGN (0x20)
                 0x0000000020000180                __uninitialized_end = .
 
-.bss            0x0000000020000180     0x11f8 load address 0x000000000000b5f0
+.bss            0x0000000020000180     0x11f8 load address 0x000000000000ab68
                 0x0000000020000180                . = ALIGN (0x4)
                 0x0000000020000180                _sbss = .
                 0x0000000020000180                __bss_start__ = _sbss
@@ -2453,7 +2427,7 @@ END GROUP
                 0x0000000020001378                _ebss = .
                 0x0000000020001378                __bss_end__ = _ebss
 
-.heap           0x0000000020001378    0x44000 load address 0x000000000000b5f0
+.heap           0x0000000020001378    0x44000 load address 0x000000000000ab68
                 0x0000000020001378                . = ALIGN (0x8)
                 0x0000000020001378                PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
@@ -2479,8 +2453,8 @@ LOAD linker stubs
  .comment       0x0000000000000033       0x34 build/syscalls.o
  .comment       0x0000000000000033       0x34 build/main.o
  .comment       0x0000000000000033       0x34 build/main_networking.o
- .comment       0x0000000000000033       0x34 build/tcp_heartbeat_demo.o
  .comment       0x0000000000000033       0x34 build/app_main.o
+ .comment       0x0000000000000033       0x34 build/demo_echo.o
  .comment       0x0000000000000033       0x34 build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
  .comment       0x0000000000000033       0x34 build//home/kj/FreeRTOS/FreeRTOS/Source/list.o
  .comment       0x0000000000000033       0x34 build//home/kj/FreeRTOS/FreeRTOS/Source/queue.o
@@ -2567,9 +2541,9 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000000000000087       0x2d build/main_networking.o
  .ARM.attributes
-                0x00000000000000b4       0x2d build/tcp_heartbeat_demo.o
+                0x00000000000000b4       0x2d build/app_main.o
  .ARM.attributes
-                0x00000000000000e1       0x2d build/app_main.o
+                0x00000000000000e1       0x2d build/demo_echo.o
  .ARM.attributes
                 0x000000000000010e       0x2d build//home/kj/FreeRTOS/FreeRTOS/Source/tasks.o
  .ARM.attributes

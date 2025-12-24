@@ -7,24 +7,23 @@ build/demo_echo_server.o: demo_echo_server.c \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/mpu_wrappers.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/task.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/list.h \
- /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_Sockets.h \
+ /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IP.h \
  FreeRTOSIPConfig.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOSIPConfigDefaults.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOSIPDeprecatedDefinitions.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/IPTraceMacroDefaults.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IP_Common.h \
- /home/kj/FreeRTOS/FreeRTOS/Source/include/event_groups.h \
- /home/kj/FreeRTOS/FreeRTOS/Source/include/timers.h \
- /home/kj/FreeRTOS/FreeRTOS/Source/include/task.h \
- /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IP.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/Compiler/GCC/pack_struct_start.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/portable/Compiler/GCC/pack_struct_end.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IP_Utils.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/queue.h \
+ /home/kj/FreeRTOS/FreeRTOS/Source/include/task.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/semphr.h \
  /home/kj/FreeRTOS/FreeRTOS/Source/include/queue.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IP.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_Sockets.h \
+ /home/kj/FreeRTOS/FreeRTOS/Source/include/event_groups.h \
+ /home/kj/FreeRTOS/FreeRTOS/Source/include/timers.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IP_Private.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_Stream_Buffer.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_Routing.h \
@@ -44,4 +43,5 @@ build/demo_echo_server.o: demo_echo_server.c \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IPv6_Utils.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IPv4.h \
  /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_IPv6.h \
- demo_echo_server.h
+ /home/kj/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/source/include/FreeRTOS_Sockets.h \
+ demo_echo_server.h FreeRTOSIPConfig.h

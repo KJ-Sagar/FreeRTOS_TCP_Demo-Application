@@ -1,3 +1,15 @@
+#include <string.h>     /* memset */
+#include <stddef.h>     /* NULL */
+
+#include "FreeRTOS.h"
+#include "task.h"
+
+#include "FreeRTOS_IP.h"
+#include "FreeRTOS_Sockets.h"
+
+#include "demo_echo_server.h"
+#include "FreeRTOSIPConfig.h"
+#define ECHO_SERVER_PORT    5001
 static void prvEchoServerTask( void * pvParameters )
 {
     Socket_t xListenSocket, xClientSocket;
